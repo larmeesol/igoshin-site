@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ООО Игошин — Интерактивные ИТ-системы и Портфолио</title>
+    <title>ООО Игошин — Интерактивные ИТ-системы и 3D-Фракталы</title>
     <style>
         :root {
-            --bg-color: #06080c;
-            --card-bg: rgba(22, 25, 32, 0.7);
+            --bg-color: #030406;
+            --card-bg: rgba(10, 12, 16, 0.85);
             --accent-color: #00f0ff;
             --accent-purple: #9d4edd;
             --text-main: #f5f6f8;
-            --text-muted: #8f9cae;
-            --border-color: rgba(36, 41, 54, 0.6);
+            --text-muted: #a0aab8;
+            --border-color: rgba(0, 240, 255, 0.3);
         }
 
         * {
@@ -23,31 +23,46 @@
             scroll-behavior: smooth;
         }
 
-body {
-    background-color: var(--bg-color);
-    /* Делаем сетку ярче (0.08 вместо 0.02) */
-    background-image: 
-        linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
-    background-size: 60px 60px; /* Немного увеличили размер ячеек для масштабности */
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
-    padding-bottom: 80px;
-    
-    /* Подключаем бесконечную плавную анимацию движения сетки */
-    animation: gridMove 25s linear infinite;
-}
+        /* Эффектный неоновый фон с 3D фракталами */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+            position: relative;
+        }
 
-/* Настройка самого движения (смещение фоновой картинки под размер ячейки 60px) */
-@keyframes gridMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 60px 60px;
-    }
-}
+        /* Контейнер для 3D фрактала */
+        .fractal-background {
+            position: fixed;
+            top: -20%; left: -20%; width: 140%; height: 140%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0.15; /* Чуть прозрачный, чтобы не мешать тексту */
+            filter: blur(1px); /* Легкое размытие для глубины */
+        }
+
+        /* Холст, на котором JavaScript нарисует фрактал */
+        #fractalCanvas {
+            width: 100%; height: 100%;
+            /* Бесконечная 3D-анимация вращения и масштабирования */
+            animation: fractalRotation 60s linear infinite, fractalPulse 15s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        /* CSS Анимации */
+        @keyframes fractalRotation {
+            0% { transform: perspective(1000px) rotateY(0deg) rotateX(10deg) scale(1); }
+            50% { transform: perspective(1000px) rotateY(180deg) rotateX(-10deg) scale(1.1); }
+            100% { transform: perspective(1000px) rotateY(360deg) rotateX(10deg) scale(1); }
+        }
+
+        @keyframes fractalPulse {
+            0%, 100% { filter: contrast(1.1) brightness(1); }
+            50% { filter: contrast(1.3) brightness(1.2); }
+        }
 
         /* Анимация появления при прокрутке */
         .fade-in {
@@ -57,174 +72,87 @@ body {
         }
 
         @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
 
-        header {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
+        header { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 240, 255, 0.2); }
         .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: 1.5px; }
         .logo span { color: var(--accent-color); text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
 
         .hero { padding: 120px 0 80px 0; max-width: 850px; }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 24px; text-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
         .hero h1 span { background: linear-gradient(45deg, var(--accent-color), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(45deg, rgba(0, 240, 255, 0.1), rgba(157, 78, 221, 0.1));
+            background: linear-gradient(45deg, rgba(0, 240, 255, 0.2), rgba(157, 78, 221, 0.2));
             color: var(--text-main);
-            border: 1px solid var(--accent-color);
+            border: 2px solid var(--accent-color);
             padding: 16px 36px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px; /* Более округлые для AR/VR стиля */
             transition: all 0.3s ease;
             cursor: pointer;
+            backdrop-filter: blur(5px);
         }
-        .btn:hover { border-color: var(--accent-purple); box-shadow: 0 0 25px rgba(157, 78, 221, 0.4); transform: translateY(-2px); }
+        .btn:hover { border-color: var(--accent-purple); box-shadow: 0 0 30px rgba(157, 78, 221, 0.5); transform: translateY(-2px); }
 
-        .section-title { font-size: 2.2rem; font-weight: 800; margin: 100px 0 40px 0; }
+        .section-title { font-size: 2.2rem; font-weight: 800; margin: 100px 0 40px 0; text-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
 
-        /* Стили галереи портфолио */
-        .portfolio-filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
+        .portfolio-filters { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
         .filter-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            background: transparent; border: 1px solid rgba(0, 240, 255, 0.3); color: var(--text-muted);
+            padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;
         }
+        .filter-btn.active, .filter-btn:hover { border-color: var(--accent-color); color: var(--accent-color); background: rgba(0, 240, 255, 0.1); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
 
-        .filter-btn.active, .filter-btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-            background: rgba(0, 240, 255, 0.05);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .portfolio-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
+            overflow: hidden; transition: all 0.3s ease; cursor: pointer; backdrop-filter: blur(10px);
         }
-
-        .portfolio-item:hover {
-            border-color: var(--accent-purple);
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(157, 78, 221, 0.1);
-        }
-
+        .portfolio-item:hover { border-color: var(--accent-purple); transform: scale(1.02); box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2); }
         .portfolio-img {
-            width: 100%;
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid var(--border-color);
-            transition: transform 0.5s ease;
+            width: 100%; height: 220px; background-size: cover; background-position: center;
+            border-bottom: 1px solid var(--border-color); transition: transform 0.5s ease;
         }
-
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-
+        .portfolio-item:hover .portfolio-img { transform: scale(1.05); }
         .portfolio-info { padding: 25px; }
         .portfolio-info h3 { font-size: 1.3rem; margin-bottom: 10px; }
         .portfolio-info p { color: var(--text-muted); font-size: 0.95rem; }
         .portfolio-tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            font-weight: 700;
+            display: inline-block; font-size: 0.75rem; text-transform: uppercase;
+            color: var(--accent-color); border: 1px solid var(--accent-color);
+            padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; font-weight: 700;
         }
 
-        /* Всплывающее окно (Модал) */
         .modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(6, 8, 12, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 4, 6, 0.97); display: flex; align-items: center; justify-content: center;
+            z-index: 999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 20px;
         }
-
         .modal.active { opacity: 1; pointer-events: auto; }
-
         .modal-content {
-            background: #11141a;
-            border: 1px solid var(--border-color);
-            max-width: 800px;
-            width: 100%;
-            border-radius: 16px;
-            padding: 30px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
+            background: #0a0c10; border: 1px solid var(--border-color); max-width: 800px;
+            width: 100%; border-radius: 16px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto;
         }
-
         .close-modal {
-            position: absolute;
-            top: 20px; right: 20px;
-            font-size: 2rem; color: var(--text-muted);
+            position: absolute; top: 20px; right: 20px; font-size: 2rem; color: var(--text-muted);
             cursor: pointer; transition: color 0.2s;
         }
         .close-modal:hover { color: var(--text-main); }
+        .modal-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 20px; border-radius: 8px; background: #000; }
+        .modal-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .modal-video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            margin-bottom: 20px; border-radius: 8px; background: #000;
-        }
-        .modal-video-container iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
-
-        /* Футер */
-        .info-wrapper { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; border-top: 1px solid var(--border-color); padding-top: 60px; margin-top: 100px; }
+        .info-wrapper { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; border-top: 1px solid rgba(0, 240, 255, 0.2); padding-top: 60px; margin-top: 100px; }
         .requisites-list li { margin-bottom: 12px; }
         .requisites-list span { color: var(--text-muted); display: inline-block; width: 110px; }
-        .tender-badge { border: 1px dashed rgba(0, 240, 255, 0.3); padding: 20px; border-radius: 8px; margin-top: 30px; font-size: 0.95rem; background: rgba(0, 240, 255, 0.01); }
+        .tender-badge { border: 1px dashed rgba(0, 240, 255, 0.3); padding: 20px; border-radius: 8px; margin-top: 30px; font-size: 0.95rem; background: rgba(0, 240, 255, 0.05); }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
@@ -234,31 +162,35 @@ body {
 </head>
 <body>
 
+    <div class="fractal-background">
+        <canvas id="fractalCanvas"></canvas>
+    </div>
+
     <div class="container">
         <header>
             <div class="logo">ИГОШИН<span>.TECH</span></div>
         </header>
 
         <section class="hero fade-in">
-            <h1>Разработка интерактивных решений и <span>ИТ-систем</span></h1>
-            <p>Проектирование, кастомная разработка софта и создание иммерсивных сред дополненной/виртуальной реальности для масштабных проектов.</p>
-            <a href="#portfolio" class="btn">Смотреть портфолио</a>
+            <h1>Проектирование и разработка <span>ИТ-систем будущего</span></h1>
+            <p>Кастомная разработка отказоустойчивого софта, создание иммерсивных AR/VR симуляторов и внедрение высокотехнологичных программно-аппаратных комплексов.</p>
+            <a href="#portfolio" class="btn">Смотреть проекты</a>
         </section>
 
         <section id="portfolio" class="fade-in" style="animation-delay: 0.2s;">
-            <h2 class="section-title">Выполненные проекты</h2>
+            <h2 class="section-title">Реализованные проекты</h2>
             
             <div class="portfolio-filters">
-                <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
-                <button class="filter-btn" onclick="filterProjects('po')">Разработка ПО</button>
-                <button class="filter-btn" onclick="filterProjects('arvr')">AR/VR приложения</button>
-                <button class="filter-btn" onclick="filterProjects('media')">Мультимедиа & ПАК</button>
+                <button class="filter-btn active" onclick="filterProjects('all')">Все</button>
+                <button class="filter-btn" onclick="filterProjects('po')">Софт</button>
+                <button class="filter-btn" onclick="filterProjects('arvr')">AR/VR</button>
+                <button class="filter-btn" onclick="filterProjects('media')">Мультимедиа</button>
             </div>
 
             <div class="portfolio-grid">
                 
-                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и отказоустойчивого ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Поддержка высоких нагрузок, шифрование данных и сбор аналитики в реальном времени.', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', '')">
-                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Серверная часть и ПО для контроля медиа-фасадов и терминалов. Высокие нагрузки, шифрование данных.', 'project1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('project1.jpg')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Разработка ПО</span>
                         <h3>Централизованная система управления</h3>
@@ -266,21 +198,21 @@ body {
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор на движках Unreal Engine / Unity для интерактивного обучения сотрудников работе на сложных промышленных и инфраструктурных объектах. Высокоточная симуляция физических процессов.', 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80', '')">
-                    <div class="portfolio-img" style="background-image: url('project2.jpg.jpg')"></div>
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор для интерактивного обучения сотрудников работе на опасных объектах. Высокоточное 3D моделирование и симуляция физики.', 'project2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('project2.jpg')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">AR/VR приложения</span>
-                        <h3>Промышленный VR-симулятор</h3>
-                        <p>Интерактивный виртуальный комплекс для симуляции технологических процессов и обучения персонала.</p>
+                        <h3>VR-симулятор сложных процессов</h3>
+                        <p>Интерактивный виртуальный комплекс для обучения персонала и симуляции технологических цепочек.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание интерактивного контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения. Синхронизация программно-аппаратного комплекса.', 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', '')">
-                    <div class="portfolio-img" style="background-image: url('project1.jpg.jpg')"></div>
+                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения (LiDAR).', 'project3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('project3.jpg')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Мультимедиа & ПАК</span>
                         <h3>Интерактивная выставка 360°</h3>
-                        <p>Разработка интерактивного контента и пусконаладка программно-аппаратного комплекса под датчики кинематики.</p>
+                        <p>Разработка контента и пусконаладка программно-аппаратного комплекса под датчики кинематики.</p>
                     </div>
                 </div>
 
@@ -324,16 +256,69 @@ body {
     </div>
 
     <script>
-        // Фильтрация проектов по категориям
+        // 1. Генерация 3D Фрактала на холсте (Canvas)
+        const canvas = document.getElementById('fractalCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Устанавливаем размер холста под размер экрана
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Функция рисования фрактала Мандельброта/Жюлиа в стиле 3D неоновых нитей
+        function drawFractal() {
+            const width = canvas.width;
+            const height = canvas.height;
+            const iterations = 50; // Сложность фрактала
+            const scale = 300; // Масштаб фрактала
+            
+            // Центр фрактала
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            // Очистка холста
+            ctx.clearRect(0, 0, width, height);
+
+            // Отрисовываем фрактал точками с неоновым свечением
+            for (let i = 0; i < iterations; i++) {
+                ctx.beginPath();
+                ctx.lineWidth = 0.5; // Очень тонкие неоновые линии
+                
+                // Цвет от неона к фиолетовому для создания 3D глубины
+                ctx.strokeStyle = `rgba(${0 + i * 2}, ${240 - i * 3}, 255, ${0.4 - i * 0.005})`;
+                
+                // Эффект свечения
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = `rgba(0, 240, 255, ${0.6 - i * 0.01})`;
+
+                // Рисуем один "слой" фрактала по кругу для 3D ощущения
+                for (let j = 0; j < 360; j += 2) {
+                    const angle = j * Math.PI / 180;
+                    // Математика фрактала (упрощенная для Canvas)
+                    const x = (Math.cos(angle * i * 0.1) * Math.sin(i * 0.5) * scale * (1 + 0.1 * Math.cos(j * 0.1))) + centerX;
+                    const y = (Math.sin(angle * i * 0.1) * Math.cos(i * 0.5) * scale * (1 + 0.1 * Math.sin(j * 0.1))) + centerY;
+                    
+                    if (j === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            }
+        }
+        
+        // Генерируем один кадр фрактала (потом CSS его анимирует)
+        drawFractal();
+
+        // 2. Логика интерактивности сайта
         function filterProjects(category) {
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.filter-btn');
-            
             if (event && event.target) {
                 buttons.forEach(btn => btn.classList.remove('active'));
                 event.target.classList.add('active');
             }
-
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-cat') === category) {
                     item.style.display = 'block';
@@ -343,35 +328,26 @@ body {
             });
         }
 
-        // Открытие карточки проекта во всплывающем окне
         function openModal(title, desc, imgUrl, youtubeId) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDesc').innerText = desc;
-            
             const videoWrapper = document.getElementById('modalVideoWrapper');
             const iframe = document.getElementById('modalVideo');
             const img = document.getElementById('modalImg');
-
             if (youtubeId) {
                 iframe.src = "https://www.youtube.com/embed/" + youtubeId;
-                videoWrapper.style.display = 'block';
-                img.style.display = 'none';
+                videoWrapper.style.display = 'block'; img.style.display = 'none';
             } else {
-                iframe.src = "";
-                videoWrapper.style.display = 'none';
-                img.src = imgUrl;
-                img.style.display = 'block';
+                iframe.src = ""; videoWrapper.style.display = 'none';
+                img.src = imgUrl; img.style.display = 'block';
             }
-
             document.getElementById('projectModal').classList.add('active');
         }
 
-        // Закрытие окна
         function closeModal(event) {
             document.getElementById('projectModal').classList.remove('active');
             document.getElementById('modalVideo').src = "";
         }
     </script>
-
 </body>
 </html>
