@@ -238,13 +238,13 @@
                 <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
                 <button class="filter-btn" onclick="filterProjects('po')">Разработка ПО</button>
                 <button class="filter-btn" onclick="filterProjects('arvr')">AR/VR приложения</button>
-                <button class="filter-btn" onclick="filterProjects('media')">Мультимедиа & 3D</button>
+                <button class="filter-btn" onclick="filterProjects('media')">Мультимедиа & ПАК</button>
             </div>
 
             <div class="portfolio-grid">
                 
-                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и отказоустойчивого ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Поддержка высоких нагрузок, шифрование данных.', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', 'dQw4w9WgXcQ')">
-                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и отказоустойчивого ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Поддержка высоких нагрузок, шифрование данных и сбор аналитики в реальном времени.', 'http://googleusercontent.com/image_collection/image_retrieval/9481738902077244675_0', '')">
+                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/9481738902077244675_0')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Разработка ПО</span>
                         <h3>Централизованная система управления</h3>
@@ -252,8 +252,8 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор на движке Unreal Engine для обучения сотрудников работе на опасных промышленных объектах. Высокоточное 3D моделирование оборудования и симуляция физики газов.', 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80', '')">
-                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор на движках Unreal Engine / Unity для интерактивного обучения сотрудников работе на сложных промышленных и инфраструктурных объектах. Высокоточная симуляция физических процессов.', 'http://googleusercontent.com/image_collection/image_retrieval/14728959295948162624_0', '')">
+                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/14728959295948162624_0')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">AR/VR приложения</span>
                         <h3>Промышленный VR-симулятор</h3>
@@ -261,12 +261,12 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание контента для панорамной проекционной стены с системой трекинга движений рук (на базе датчиков LiDAR). Посетители могут физически взаимодействовать с историческими 3D-моделями.', 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80', '')">
-                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание интерактивного контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения. Синхронизация программно-аппаратного комплекса.', 'http://googleusercontent.com/image_collection/image_retrieval/9698585988347064485_0', '')">
+                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/9698585988347064485_0')"></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">Мультимедиа & 3D</span>
+                        <span class="portfolio-tag">Мультимедиа & ПАК</span>
                         <h3>Интерактивная выставка 360°</h3>
-                        <p>Разработка контента и пусконаладка программно-аппаратного комплекса под датчики кинематики.</p>
+                        <p>Разработка интерактивного контента и пусконаладка программно-аппаратного комплекса под датчики кинематики.</p>
                     </div>
                 </div>
 
@@ -309,7 +309,7 @@
         </div>
     </div>
 
-    <script>
+    <script {nonce}>
         // Фильтрация проектов по категориям
         function filterProjects(category) {
             const items = document.querySelectorAll('.portfolio-item');
@@ -353,7 +353,7 @@
         // Закрытие окна
         function closeModal(event) {
             document.getElementById('projectModal').classList.remove('active');
-            document.getElementById('modalVideo').src = ""; // стоп видео при закрытии
+            document.getElementById('modalVideo').src = "";
         }
     </script>
 
