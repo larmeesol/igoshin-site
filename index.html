@@ -25,27 +25,27 @@
 
 body {
     background-color: var(--bg-color);
-    /* Создаем сетку */
+    /* Делаем сетку ярче (0.08 вместо 0.02) */
     background-image: 
-        linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+        linear-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+    background-size: 60px 60px; /* Немного увеличили размер ячеек для масштабности */
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
     padding-bottom: 80px;
     
     /* Подключаем бесконечную плавную анимацию движения сетки */
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 25s linear infinite;
 }
 
-/* Настройка самого движения (смещение фоновой картинки) */
+/* Настройка самого движения (смещение фоновой картинки под размер ячейки 60px) */
 @keyframes gridMove {
     0% {
         background-position: 0 0;
     }
     100% {
-        background-position: 50px 50px; /* Смещаем ровно на размер одной ячейки для бесшовности */
+        background-position: 60px 60px;
     }
 }
 
