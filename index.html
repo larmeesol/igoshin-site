@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ИП Игошин Е. С. — Разработка ПО, AR/VR и мультимедиа систем</title>
+    <title>ООО Игошин — Разработка ПО, AR/VR и мультимедиа систем</title>
     <style>
         :root {
-            --bg-color: #0d0f12;
-            --card-bg: #161920;
+            --bg-color: #06080c;
+            --card-bg: rgba(22, 25, 32, 0.7);
             --accent-color: #00f0ff;
-            --accent-hover: #00b8cc;
+            --accent-purple: #9d4edd;
             --text-main: #f5f6f8;
             --text-muted: #8f9cae;
-            --border-color: #242936;
+            --border-color: rgba(36, 41, 54, 0.6);
         }
 
         * {
@@ -24,9 +24,41 @@
 
         body {
             background-color: var(--bg-color);
+            /* Эффект технологичной сетки на фоне */
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 60px;
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        /* Декоративные светящиеся сферы для создания глубины (AR/VR стиль) */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.12) 0%, transparent 70%);
+            top: 400px;
+            left: -200px;
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
@@ -40,130 +72,167 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
             color: var(--text-main);
         }
 
         .logo span {
             color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
 
         /* Герой-блок */
         .hero {
-            padding: 100px 0 80px 0;
-            text-align: left;
-            max-width: 800px;
+            padding: 120px 0 100px 0;
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 24px;
+            letter-spacing: -1px;
         }
 
         .hero h1 span {
-            color: var(--accent-color);
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 40px;
+            max-width: 700px;
         }
 
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 14px 32px;
+            background: linear-gradient(45deg, rgba(0, 240, 255, 0.1), rgba(157, 78, 221, 0.1));
+            color: var(--text-main);
+            border: 1px solid var(--accent-color);
+            padding: 16px 36px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+            border-radius: 6px;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+            backdrop-filter: blur(5px);
         }
 
         .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.4);
+            transform: translateY(-2px);
             cursor: pointer;
         }
 
         /* Блок услуг */
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 15%;
-            height: 70%;
-            width: 4px;
-            background-color: var(--accent-color);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-bottom: 100px;
         }
 
         .service-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 6px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 40px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Свечение карточки при наведении */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(100%);
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-color);
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);
+        }
+
+        /* Иконки в стиле Hi-Tech */
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 240, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            color: var(--accent-color);
+        }
+
+        .service-card:hover .icon {
+            background: rgba(157, 78, 221, 0.1);
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
         }
 
         .service-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 16px;
-            color: var(--text-main);
+            font-weight: 700;
         }
 
         .service-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
-        /* Юридический блок и контакты */
+        /* Футер: инфо и контакты */
         .info-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
             border-top: 1px solid var(--border-color);
             padding-top: 60px;
         }
 
         .info-block h3, .contacts-block h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
         }
 
         .requisites-list {
@@ -171,14 +240,14 @@
         }
 
         .requisites-list li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-size: 1rem;
         }
 
         .requisites-list span {
             color: var(--text-muted);
             display: inline-block;
-            width: 100px;
+            width: 110px;
         }
 
         .contacts-list {
@@ -186,110 +255,71 @@
         }
 
         .contacts-list li {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .contacts-list a {
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
         .contacts-list a:hover {
-            text-decoration: underline;
+            color: var(--accent-purple);
         }
 
         .tender-badge {
-            display: inline-block;
-            background-color: rgba(0, 240, 255, 0.05);
-            border: 1px dashed var(--accent-color);
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            max-width: 450px;
+            background: linear-gradient(90deg, rgba(0, 240, 255, 0.03), rgba(157, 78, 221, 0.03));
+            border: 1px dashed rgba(0, 240, 255, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            max-width: 550px;
         }
 
-        /* Мобильная адаптивность */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .info-wrapper { grid-template-columns: 1fr; gap: 40px; }
-            .hero { padding: 60px 0; }
+        /* Адаптивность */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.6rem; }
+            .info-wrapper { grid-template-columns: 1fr; gap: 50px; }
+            .hero { padding: 80px 0 60px 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">IGOSHIN<span>.TECH</span></div>
+        <div class="logo">ИГОШИН<span>.TECH</span></div>
     </header>
 
     <div class="container">
-        <!-- Главный экран -->
         <section class="hero">
-            <h1>Проектирование и разработка <span>интерактивных ИТ-систем</span></h1>
-            <p>Инженерно-технические решения под ключ: от создания сложного программного обеспечения и 3D-визуализации до интеграции программно-аппаратных комплексов для коммерческого и государственного секторов.</p>
-            <a href="mailto:info@yourdomain.ru" class="btn">Связаться с нами</a>
+            <h1>Разработка интерактивных решений и <span>ИТ-систем</span></h1>
+            <p>Проектирование, кастомная разработка программного обеспечения, создание иммерсивных сред дополненной/виртуальной реальности и внедрение отказоустойчивых программно-аппаратных комплексов.</p>
+            <a href="mailto:info@yourdomain.ru" class="btn">Направить запрос</a>
         </section>
 
-        <!-- Блок компетенций -->
         <section>
-            <h2 class="section-title">Направления деятельности</h2>
+            <h2 class="section-title">Направления компетенций</h2>
             <div class="services-grid">
                 
                 <div class="service-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
                     <h3>Разработка ПО</h3>
-                    <p>Проектирование архитектуры и написание отказоустойчивого софта, создание серверных решений, интеграция API и кастомных систем управления.</p>
+                    <p>Проектирование архитектуры и написание отказоустойчивого софта, создание серверных решений, интеграция API и сложных систем управления базами данных.</p>
                 </div>
 
                 <div class="service-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l-7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    </div>
                     <h3>AR/VR приложения</h3>
-                    <p>Создание иммерсивных симуляторов, интерактивных презентаций и приложений с использованием дополненной и виртуальной реальности для различных платформ.</p>
+                    <p>Создание иммерсивных симуляторов, интерактивных презентаций и кроссплатформенных приложений с использованием дополненной и виртуальной реальности.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3>3D моделирование</h3>
-                    <p>Высокоточная трехмерная графика, моделирование объектов, промышленная визуализация и анимация технологических процессов.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Мультимедиа</h3>
-                    <p>Разработка интерактивного контента для инсталляций, музеев, выставочных стендов и масштабных шоу-программ.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Программно-аппаратные комплексы</h3>
-                    <p>Подбор, пусконаладка и бесшовная интеграция оборудования с программной частью. Настройка контроллеров, датчиков и дисплейных систем.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Подвал сайта: Тендерный блок и Контакты -->
-        <footer class="info-wrapper">
-            <div class="info-block">
-                <h3>Карточка предприятия</h3>
-                <ul class="requisites-list">
-                    <li><span>Компания:</span> ИП Игошин Е.С.</li>
-                    <li><span>ИНН:</span> 362704381553</li>
-                    <li><span>ОГРНИП:</span> 319784700281368</li>
-                </ul>
-                <div class="tender-badge">
-                    ✓ Компания аккредитована для участия в закупках и коммерческих тендерах по направлениям ИТ и мультимедиа-разработки.
-                </div>
-            </div>
-
-            <div class="contacts-block">
-                <h3>Контакты</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Для направления технических заданий и приглашений к тендерам:</p>
-                <ul class="contacts-list">
-                    <li>Email: <a href="mailto:igoshin_es@mail.ru">igoshin_es@mail.ru</a></li>
-                    <li>Режим работы: Пн — Пт, 10:00 — 19:00 (МСК)</li>
-                </ul>
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 2a15.3 15.3 0
