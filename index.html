@@ -243,8 +243,8 @@
 
             <div class="portfolio-grid">
                 
-                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и отказоустойчивого ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Поддержка высоких нагрузок, шифрование данных и сбор аналитики в реальном времени.', 'http://googleusercontent.com/image_collection/image_retrieval/9481738902077244675_0', '')">
-                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/9481738902077244675_0')"></div>
+                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и отказоустойчивого ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Поддержка высоких нагрузок, шифрование данных и сбор аналитики в реальном времени.', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', '')">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Разработка ПО</span>
                         <h3>Централизованная система управления</h3>
@@ -252,8 +252,8 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор на движках Unreal Engine / Unity для интерактивного обучения сотрудников работе на сложных промышленных и инфраструктурных объектах. Высокоточная симуляция физических процессов.', 'http://googleusercontent.com/image_collection/image_retrieval/14728959295948162624_0', '')">
-                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/14728959295948162624_0')"></div>
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор на движках Unreal Engine / Unity для интерактивного обучения сотрудников работе на сложных промышленных и инфраструктурных объектах. Высокоточная симуляция физических процессов.', 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80', '')">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">AR/VR приложения</span>
                         <h3>Промышленный VR-симулятор</h3>
@@ -261,8 +261,8 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание интерактивного контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения. Синхронизация программно-аппаратного комплекса.', 'http://googleusercontent.com/image_collection/image_retrieval/9698585988347064485_0', '')">
-                    <div class="portfolio-img" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/9698585988347064485_0')"></div>
+                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание интерактивного контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения. Синхронизация программно-аппаратного комплекса.', 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', '')">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Мультимедиа & ПАК</span>
                         <h3>Интерактивная выставка 360°</h3>
@@ -309,14 +309,16 @@
         </div>
     </div>
 
-    <script {nonce}>
+    <script>
         // Фильтрация проектов по категориям
         function filterProjects(category) {
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
 
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-cat') === category) {
