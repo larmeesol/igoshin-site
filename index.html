@@ -23,17 +23,31 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            background-color: var(--bg-color);
-            background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.01) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.01) 1px, transparent 1px);
-            background-size: 50px 50px;
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 80px;
-        }
+body {
+    background-color: var(--bg-color);
+    /* Создаем сетку */
+    background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    
+    /* Подключаем бесконечную плавную анимацию движения сетки */
+    animation: gridMove 20s linear infinite;
+}
+
+/* Настройка самого движения (смещение фоновой картинки) */
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px; /* Смещаем ровно на размер одной ячейки для бесшовности */
+    }
+}
 
         /* Анимация появления при прокрутке */
         .fade-in {
