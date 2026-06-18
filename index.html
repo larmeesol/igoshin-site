@@ -301,47 +301,174 @@
 
         <!-- Раздел: Выполненные проекты (Галерея) -->
         <section id="portfolio">
-            <h2 class="section-title">Выполненные проекты</h2>
-            <p class="section-subtitle">Ознакомьтесь с примерами внедрения наших программно-аппаратных комплексов и интерактивных систем.</p>
+            <h2 class="section-title">Реализованные проекты</h2>
+            <p class="section-subtitle">Ознакомьтесь с примерами внедрения наших программно-аппаратных комплексов, иммерсивных сред и интерактивных систем.</p>
             
             <div class="portfolio-filters">
                 <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
-                <button class="filter-btn" onclick="filterProjects('po')">Разработка ПО</button>
-                <button class="filter-btn" onclick="filterProjects('arvr')">AR/VR приложения</button>
-                <button class="filter-btn" onclick="filterProjects('media')">Мультимедиа & ПАК</button>
+                <button class="filter-btn" onclick="filterProjects('stands')">Выставочные стенды</button>
+                <button class="filter-btn" onclick="filterProjects('models')">Архитектурные макеты</button>
+                <button class="filter-btn" onclick="filterProjects('holo')">Голограммы</button>
+                <button class="filter-btn" onclick="filterProjects('arvr')">VR / AR</button>
+                <button class="filter-btn" onclick="filterProjects('video')">Видеоконтент</button>
+                <button class="filter-btn" onclick="filterProjects('install')">Инсталляции</button>
             </div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-cat="po" onclick="openModal('Система управления интерактивными комплексами', 'Разработка серверной части и ПО для централизованного контроля медиа-фасадов и сенсорных терминалов. Высокая отказоустойчивость и аналитика.', 'project1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('project1.jpg')"></div>
+                
+                <div class="portfolio-item" data-cat="stands" onclick="openModal('Интерактивный стенд на международном форуме', 'Разработка концепции, производство конструктива и интеграция тач-панелей для крупного энергетического холдинга.', 'stands1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('stands1.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">Разработка ПО</span>
-                        <h3>Централизованная система управления</h3>
-                        <p>Интеграция серверного софта для контроля мультимедийного оборудования корпоративного сектора.</p>
+                        <span class="portfolio-tag">Выставочные стенды</span>
+                        <h3>Экспозиционный комплекс «Энергия будущего»</h3>
+                        <p>Интерактивное выставочное пространство с бесшовной интеграцией медиа-контента.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="stands" onclick="openModal('Двухуровневый мультимедийный стенд', 'Проектирование и запуск высокотехнологичного стенда с кинетическими элементами и панорамными экранами.', 'stands2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('stands2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Выставочные стенды</span>
+                        <h3>Цифровой стенд промышленного консорциума</h3>
+                        <p>Реализация проекта под ключ: от зонирования и дизайна до пусконаладки электроники.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="stands" onclick="openModal('Презентационный павильон', 'Создание мобильного интерактивного павильона для демонстрации технологических достижений региона.', 'stands3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('stands3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Выставочные стенды</span>
+                        <h3>Технологический павильон ЭКСПО</h3>
+                        <p>Мультимедийный комплекс с высокой пропускной способностью и зонами геймификации.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('VR-тренажер для промышленности', 'Иммерсивный симулятор для интерактивного обучения сотрудников работе на сложных и опасных объектах. Высокоточная симуляция физики.', 'project2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('project2.jpg')"></div>
+                <div class="portfolio-item" data-cat="models" onclick="openModal('Макет эко-технопарка с AR-слоем', 'Физический макет с детализацией 1:200, оснащенный динамической подсветкой и управлением сценариями через планшет.', 'models1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('models1.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">AR/VR приложения</span>
-                        <h3>Промышленный VR-симулятор</h3>
-                        <p>Интерактивный виртуальный комплекс для симуляции технологических процессов и обучения персонала.</p>
+                        <span class="portfolio-tag">Архитектурные макеты</span>
+                        <h3>Умный макет производственного кластера</h3>
+                        <p>Интеграция дополненной реальности для демонстрации внутренних логистических цепочек.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="models" onclick="openModal('Интерактивный макет АЭС', 'Высокоточная копия атомной станции с моторизованными элементами и симуляцией физических процессов.', 'models2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('models2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Архитектурные макеты</span>
+                        <h3>Макет энергоблока нового поколения</h3>
+                        <p>Промышленная детализация с послойным разбором реакторного зала на интерактивном экране.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="models" onclick="openModal('Градостроительный интерактивный макет', 'Масштабная модель инфраструктурного объекта со светодиодной проекционной сеткой отображения данных.', 'models3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('models3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Архитектурные макеты</span>
+                        <h3>Цифровой генеральный план мегаполиса</h3>
+                        <p>Синхронизация физического макета с центральной базой данных мониторинга города.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-cat="media" onclick="openModal('Интерактивная музейная экспозиция', 'Создание интерактивного контента для панорамных проекционных стен с системой трекинга движений на базе датчиков компьютерного зрения.', 'project3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('project3.jpg')"></div>
+                <div class="portfolio-item" data-cat="holo" onclick="openModal('Голографическая пирамида 360°', 'Создание инсталляции для демонстрации парящих в воздухе 3D-моделей тяжелого оборудования в разрезе.', 'holo1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('holo1.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">Мультимедиа & ПАК</span>
-                        <h3>Интерактивная выставка 360°</h3>
-                        <p>Разработка интерактивного контента и пусконаладка программно-аппаратного комплекса под датчики кинематики.</p>
+                        <span class="portfolio-tag">Голограммы</span>
+                        <h3>3D-визуализация газотурбинной установки</h3>
+                        <p>Голографический контент ультравысокой четкости с эффектом глубокого объема без очков.</p>
                     </div>
                 </div>
+                <div class="portfolio-item" data-cat="holo" onclick="openModal('Голографический куб для ритейла', 'Проектирование и инсталляция витрины со встроенной прозрачной матрицей и оптическими зеркалами.', 'holo2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('holo2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Голограммы</span>
+                        <h3>Интерактивная витрина премиум-продуктов</h3>
+                        <p>Совмещение физического объекта внутри куба с парящей вокруг него цифровой графикой.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="holo" onclick="openModal('Масштабный голографический экран', 'Развертывание проекционной системы на базе специализированной пленки обратной проекции на форуме.', 'holo3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('holo3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Голограммы</span>
+                        <h3>Голографический спикер-ассистент</h3>
+                        <p>Создание эффекта присутствия виртуального ведущего на сцене в реальном времени.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Промышленный VR-тренажер', 'Иммерсивный симулятор для безопасного интерактивного обучения сотрудников действиям при ЧС на производстве.', 'arvr1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('arvr1.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR / AR</span>
+                        <h3>VR-симулятор нефтеперерабатывающего узла</h3>
+                        <p>Точная симуляция технологических цепочек, физики газов и работы с инженерным меню.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Виртуальная экскурсия по заводу', 'Разработка приложения для VR-шлемов со сферическим видео 8K и интерактивными инфоточками.', 'arvr2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('arvr2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR / AR</span>
+                        <h3>3D-тур по металлургическому комбинату</h3>
+                        <p>Безопасный доступ на закрытые участки производства для клиентов и инвесторов.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Мобильное AR-приложение', 'Разработка софта с трекингом поверхностей для демонстрации габаритов сложного оборудования.', 'arvr3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('arvr3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR / AR</span>
+                        <h3>Каталог продукции в дополненной реальности</h3>
+                        <p>Визуализация тяжелой техники в реальном масштабе прямо на столе или в цеху заказчика.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-cat="video" onclick="openModal('3D-анимация инженерных процессов', 'Создание графики высокого уровня детализации, объясняющей внутреннее устройство сложного агрегата.', 'video1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('video1.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Видеоконтент</span>
+                        <h3>Технологический ролик для Росатома</h3>
+                        <p>Презентационный фильм с пошаговым разбором принципов работы ядерного реактора.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="video" onclick="openModal('Контент для медиафасадов 3D-Anamorphic', 'Разработка иллюзорного трехмерного контента с эффектом «выхода» графики за пределы углового экрана.', 'video2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('video2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Видеоконтент</span>
+                        <h3>Анаморфный ролик для городского экрана</h3>
+                        <p>Иммерсивная CG-графика ультравысокого разрешения для масштабных городских инсталляций.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="video" onclick="openModal('Графика для панорамных экранов', 'Рендеринг контента в нестандартном разрешении для мультимедийных залов с круговой проекцией 360°.', 'video3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('video3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Видеоконтент</span>
+                        <h3>Имиджевый контент для бренд-зоны холдинга</h3>
+                        <p>Атмосферный CG-видеоряд, синхронизированный со световым и звуковым сценарием зала.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-cat="install" onclick="openModal('Музейная инсталляция на базе LiDAR', 'Создание проекционной стены, реагирующей на прикосновения пользователей с помощью лазерных датчиков трекинга.', 'install1.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('install1.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Инсталляции</span>
+                        <h3>Живая интерактивная стена истории</h3>
+                        <p>Программное обеспечение компьютерного зрения, обрабатывающее до 40 одновременных касаний.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="install" onclick="openModal('Сенсорный навигационный терминал', 'Разработка кастомного ПО и интерфейса для мультимедийных киосков в крупных общественных пространствах.', 'install2.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('install2.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Инсталляции</span>
+                        <h3>Информационная система цифрового музея</h3>
+                        <p>Отказоустойчивое приложение с трехмерной картой и быстрым доступом к архивам данных.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-cat="install" onclick="openModal('Кинетическая световая инсталляция', 'Управление массивом моторизованных LED-сфер, движущихся по заданному алгоритму над зоной ресепшн.', 'install3.jpg', '')">
+                    <div class="portfolio-img" style="background-image: url('install3.jpg'); background-color: #111;"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Инсталляции</span>
+                        <h3>Арт-объект «Цифровая волна»</h3>
+                        <p>Синхронизация механики, программных контроллеров и динамического контента в реальном времени.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Футер и Контакты -->
         <footer class="info-wrapper" id="contacts">
             <div class="info-block">
                 <h3>Карточка предприятия</h3>
@@ -366,7 +493,6 @@
         </footer>
     </div>
 
-    <!-- Модальное окно просмотра проектов -->
     <div id="projectModal" class="modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="document.getElementById('projectModal').classList.remove('active')">&times;</span>
@@ -379,7 +505,6 @@
         </div>
     </div>
 
-    <!-- Скрипты 3D эффекта и логики страницы -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Инициализация 3D-сети на фоне
@@ -411,7 +536,7 @@
             "retina_detect": true
         });
 
-        // Фильтрация проектов
+        // Интерактивная фильтрация проектов по 6 категориям
         function filterProjects(category) {
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.filter-btn');
