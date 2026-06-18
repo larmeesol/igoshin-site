@@ -382,68 +382,67 @@
             </div>
         </div>
 
-        <footer id="contacts">
-            <div class="info-wrapper">
-                <div>
-                    <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Контакты и реквизиты</h2>
-                    <ul class="requisites-list">
-                        <li><span>Исполнитель:</span> ИП Игошин Е.С.</li>
-                        <li><span>ИНН:</span> 362704381553</li>
-                        <li><span>ОГРНИП:</span> 319784700281368</li>
-                        <li><span>Email:</span> info@igoshin.tech</li>
-                    </ul>
-                    <div class="tender-badge">
-                        Готовы к участию в тендерах, государственных закупках (44-ФЗ/223-ФЗ) и работе по прямым договорам с юридическими лицами.
-                    </div>
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 IGOSHIN.TECH. Все права защищены.</p>
-                </div>
+       <footer id="contacts">
+    <div class="info-wrapper">
+        <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Контакты и реквизиты</h2>
+            <ul class="requisites-list">
+                <li><span>Исполнитель:</span> ИП Игошин Е.С.</li>
+                <li><span>ИНН:</span> 362704381553</li>
+                <li><span>ОГРНИП:</span> 319784700281368</li>
+                <!-- Сделали email кликабельным с темой письма для ТКП -->
+                <li><span>Email (ТКП):</span> <a href="mailto:info@igoshin.tech?subject=Запрос ТКП" class="email-link">info@igoshin.tech</a></li>
+            </ul>
+            <div class="tender-badge">
+                Готовы к участию в тендерах, государственных закупках (44-ФЗ/223-ФЗ) и работе по прямым договорам с юридическими лицами. Для оперативного расчета стоимости отправляйте ТЗ на почту.
             </div>
-        </footer>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 IGOSHIN.TECH. Все права защищены.</p>
+        </div>
     </div>
+</footer>
 
-    <script>
-        // Логика модального окна с поддержкой картинок
-        function openModal(title, description, imgUrl) {
-            document.getElementById('modalTitle').innerHTML = title;
-            document.getElementById('modalDesc').innerHTML = description;
-            
-            // Динамически устанавливаем фоновую картинку для модалки
-            const modalImg = document.getElementById('modalImg');
-            if (imgUrl) {
-                modalImg.style.backgroundImage = `url('${imgUrl}')`;
-                modalImg.style.display = 'block';
-            } else {
-                modalImg.style.display = 'none';
+<!-- ПОДКЛЮЧЕНИЕ И НАСТРОЙКА АНИМИРОВАННОЙ СЕТКИ (PARTICLES.JS) -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', {
+        "particles": {
+            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00f0ff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.2, "random": false },
+            "size": { "value": 2, "random": true },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#00f0ff",
+                "opacity": 0.15,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1.5,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false
             }
-            
-            document.getElementById('portfolioModal').classList.add('active');
-        }
-
-        function closeModal(event) {
-            if (event.target.id === 'portfolioModal') {
-                document.getElementById('portfolioModal').classList.remove('active');
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": { "enable": true, "mode": "grab" },
+                "onclick": { "enable": true, "mode": "push" },
+                "resize": true
+            },
+            "modes": {
+                "grab": { "distance": 180, "line_linked": { "opacity": 0.35 } }
             }
-        }
-
-        // Функция фильтрации портфолио
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
-
-            const items = document.querySelectorAll('.portfolio-item');
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-cat') === category) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        }
-    </script>
+        },
+        "retina_detect": true
+    });
+</script>
 </body>
 </html>
