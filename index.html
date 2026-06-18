@@ -45,6 +45,7 @@
 
         .container {
             max-width: 1200px;
+            margin: 0 design auto;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
@@ -126,18 +127,16 @@
             border-color: var(--accent-color); color: var(--accent-color);
             box-shadow: 0 0 15px rgba(0, 240, 255, 0.2); background: rgba(0, 240, 255, 0.02);
         }
-.logo-placeholder img { 
+        .logo-placeholder img { 
             max-width: 80%; 
             max-height: 65%; 
             object-fit: contain; 
             opacity: 0.4; 
-            /* Превращает любой цветной логотип в аккуратный белый */
             filter: brightness(0) invert(1); 
             transition: all 0.4s ease; 
         }
         .logo-placeholder:hover img { 
             opacity: 1; 
-            /* Возвращает оригинальный цвет логотипа при наведении курсора */
             filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.3)); 
         }
 
@@ -196,17 +195,15 @@
             .hero h1 { font-size: 2.3rem; }
             .info-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .steps-container { flex-direction: column; gap: 20px; }
-            nav { display: none; } /* Мобильное меню можно упростить */
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Интерактивный 3D-фон -->
     <div id="particles-js"></div>
 
     <div class="container">
-        <!-- Шапка сайта -->
         <header id="about">
             <a href="#" class="logo">ИГОШИН<span>.TECH</span></a>
             <nav>
@@ -217,31 +214,17 @@
             </nav>
         </header>
 
-        <!-- Главный экран -->
         <section class="hero">
             <h1>Превращаем сложные технологии в <span>зрелищный интерактивный опыт</span></h1>
-            <p>Специализируемся на разработке комплексных мультимедийных решений для выставок, музеев, корпоративных пространств и промышленных предприятий. Создаем проекты полного цикла — от концепции до производства и запуска.</p>
+            <p>Специализируемся на разработке комплексных мультимедийных решений для музеев, корпоративных пространств, выставочных экспозиций и промышленных предприятий. Создаем проекты полного цикла — от концепции до производства и запуска.</p>
             <a href="#portfolio" class="btn">Смотреть портфолио</a>
         </section>
 
-        <!-- Блок: Что мы создаем -->
         <section id="what-we-do">
             <h2 class="section-title">Что мы создаём</h2>
             <p class="section-subtitle">Инженерный подход, прогрессивное программирование и передовой дизайн для решения сложнейших демонстрационных задач.</p>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>Выставочные стенды</h3>
-                    <p>Интерактивные экспозиционные пространства под ключ, выделяющие бренд на международных форумах и эффективно вовлекающие целевую аудиторию.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Архитектурные макеты</h3>
-                    <p>Высокодетализированные физические макеты заводов и объектов, усиленные динамической подсветкой и системами дополненной реальности (AR).</p>
-                </div>
-                <div class="service-card">
-                    <h3>Голографические системы</h3>
-                    <p>Прогрессивные голографические кубы, пирамиды и инсталляции для создания парящих в воздухе реалистичных 3D-моделей оборудования.</p>
-                </div>
                 <div class="service-card">
                     <h3>VR и AR решения</h3>
                     <p>Иммерсивные виртуальные экскурсии по реальным производствам, интерактивные мобильные приложения и симуляторы для обучения персонала.</p>
@@ -256,7 +239,6 @@
                 </div>
             </div>
 
-            <!-- Подблок: Полный цикл -->
             <div class="workflow">
                 <h3>Проекты полного цикла</h3>
                 <div class="steps-container">
@@ -269,7 +251,6 @@
             </div>
         </section>
 
-        <!-- Блок: Клиенты и Доверие -->
         <section class="clients-section">
             <h2 class="section-title">Клиенты и доверие</h2>
             <p class="clients-text">
@@ -277,22 +258,18 @@
             </p>
             
            <div class="clients-grid">
-                <!-- ЛОГОТИП 1: Росатом -->
                 <div class="logo-placeholder">
                     <img src="rosatom.png" alt="Росатом" class="client-logo">
                 </div>
                 
-                <!-- ЛОГОТИП 2: Северсталь -->
                 <div class="logo-placeholder">
                     <img src="severstal.png" alt="Северсталь" class="client-logo">
                 </div>
                 
-                <!-- ЛОГОТИП 3: Уралхиммаш -->
                 <div class="logo-placeholder">
                     <img src="uralhimmash.png" alt="Уралхиммаш" class="client-logo">
                 </div>
                 
-                <!-- ЛОГОТИП 4: Музеи / Технологические лидеры -->
                 <div class="logo-placeholder" style="flex-direction: column; gap: 2px; justify-content: center;">
                     <span style="font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.4); text-align: center;">МУЗЕИ РФ</span>
                     <span style="font-size: 0.6rem; color: var(--accent-purple); letter-spacing: 1px; text-align: center;">ЦИФРОВЫЕ ЭКСПОЗИЦИИ</span>
@@ -300,16 +277,12 @@
             </div>
         </section>
 
-        <!-- Раздел: Выполненные проекты (Галерея) -->
         <section id="portfolio">
             <h2 class="section-title">Реализованные проекты</h2>
             <p class="section-subtitle">Ознакомьтесь с примерами внедрения наших программно-аппаратных комплексов, иммерсивных сред и интерактивных систем.</p>
             
             <div class="portfolio-filters">
                 <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
-                <button class="filter-btn" onclick="filterProjects('stands')">Выставочные стенды</button>
-                <button class="filter-btn" onclick="filterProjects('models')">Архитектурные макеты</button>
-                <button class="filter-btn" onclick="filterProjects('holo')">Голограммы</button>
                 <button class="filter-btn" onclick="filterProjects('arvr')">VR / AR</button>
                 <button class="filter-btn" onclick="filterProjects('video')">Видеоконтент</button>
                 <button class="filter-btn" onclick="filterProjects('install')">Инсталляции</button>
@@ -317,81 +290,6 @@
 
             <div class="portfolio-grid">
                 
-                <div class="portfolio-item" data-cat="stands" onclick="openModal('Интерактивный стенд на международном форуме', 'Разработка концепции, производство конструктива и интеграция тач-панелей для крупного энергетического холдинга.', 'stands1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('stands1.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Выставочные стенды</span>
-                        <h3>Экспозиционный комплекс «Энергия будущего»</h3>
-                        <p>Интерактивное выставочное пространство с бесшовной интеграцией медиа-контента.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="stands" onclick="openModal('Двухуровневый мультимедийный стенд', 'Проектирование и запуск высокотехнологичного стенда с кинетическими элементами и панорамными экранами.', 'stands2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('stands2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Выставочные стенды</span>
-                        <h3>Цифровой стенд промышленного консорциума</h3>
-                        <p>Реализация проекта под ключ: от зонирования и дизайна до пусконаладки электроники.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="stands" onclick="openModal('Презентационный павильон', 'Создание мобильного интерактивного павильона для демонстрации технологических достижений региона.', 'stands3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('stands3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Выставочные стенды</span>
-                        <h3>Технологический павильон ЭКСПО</h3>
-                        <p>Мультимедийный комплекс с высокой пропускной способностью и зонами геймификации.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-cat="models" onclick="openModal('Макет эко-технопарка с AR-слоем', 'Физический макет с детализацией 1:200, оснащенный динамической подсветкой и управлением сценариями через планшет.', 'models1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('models1.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Архитектурные макеты</span>
-                        <h3>Умный макет производственного кластера</h3>
-                        <p>Интеграция дополненной реальности для демонстрации внутренних логистических цепочек.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="models" onclick="openModal('Интерактивный макет АЭС', 'Высокоточная копия атомной станции с моторизованными элементами и симуляцией физических процессов.', 'models2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('models2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Архитектурные макеты</span>
-                        <h3>Макет энергоблока нового поколения</h3>
-                        <p>Промышленная детализация с послойным разбором реакторного зала на интерактивном экране.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="models" onclick="openModal('Градостроительный интерактивный макет', 'Масштабная модель инфраструктурного объекта со светодиодной проекционной сеткой отображения данных.', 'models3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('models3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Архитектурные макеты</span>
-                        <h3>Цифровой генеральный план мегаполиса</h3>
-                        <p>Синхронизация физического макета с центральной базой данных мониторинга города.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-cat="holo" onclick="openModal('Голографическая пирамида 360°', 'Создание инсталляции для демонстрации парящих в воздухе 3D-моделей тяжелого оборудования в разрезе.', 'holo1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('holo1.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Голограммы</span>
-                        <h3>3D-визуализация газотурбинной установки</h3>
-                        <p>Голографический контент ультравысокой четкости с эффектом глубокого объема без очков.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="holo" onclick="openModal('Голографический куб для ритейла', 'Проектирование и инсталляция витрины со встроенной прозрачной матрицей и оптическими зеркалами.', 'holo2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('holo2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Голограммы</span>
-                        <h3>Интерактивная витрина премиум-продуктов</h3>
-                        <p>Совмещение физического объекта внутри куба с парящей вокруг него цифровой графикой.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="holo" onclick="openModal('Масштабный голографический экран', 'Развертывание проекционной системы на базе специализированной пленки обратной проекции на форуме.', 'holo3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('holo3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Голограммы</span>
-                        <h3>Голографический спикер-ассистент</h3>
-                        <p>Создание эффекта присутствия виртуального ведущего на сцене в реальном времени.</p>
-                    </div>
-                </div>
-
                 <div class="portfolio-item" data-cat="arvr" onclick="openModal('Промышленный VR-тренажер', 'Иммерсивный симулятор для безопасного интерактивного обучения сотрудников действиям при ЧС на производстве.', 'arvr1.jpg', '')">
                     <div class="portfolio-img" style="background-image: url('arvr1.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
@@ -420,12 +318,12 @@
                 <div class="portfolio-item" data-cat="video" onclick="openModal('Медиапроизводство для Корпоративной Академии Росатома', 'Полный цикл производства (Production & Post-production) двух имиджевых отчетных видеороликов для международных мероприятий с участием представителей министерств стран БРИКС. Наша команда (режиссер, 2 оператора, видеоинженер) организовала многокамерную съемку (до 6 цифровых кинокамер одновременно) со сложным студийным светом, телесуфлерами и беспроводными системами телесендеров. В рамках пост-продакшна выполнена глубокая цветокоррекция, кеинг (обработка хромакея для замены фона спикеров на брендированное окружение), профессиональный саунд-дизайн, частотная коррекция синхронов и интеграция корпоративной инфографики. Проекты сданы строго в жесткие протокольные сроки.', 'video1.jpg', '')">
                     <div class="portfolio-img" style="background-image: url('video1.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">Видеоконтент</span>
+                        <span class="portfolio-tag">Video</span>
                         <h3>Медиапроизводство БРИКС — Росатом</h3>
                         <p>Создание двух отчетных фильмов под ключ: многокамерная съемка спикеров БРИКС, хромакей, инфографика и саунд-дизайн.</p>
                     </div>
                 </div>
-               <div class="portfolio-item" data-cat="video" onclick="openModal('Интерактивный симуляционный комплекс артиллерийских систем', 'Масштабный проект на стыке высокодетализированного 3D-продакшна и разработки интерактивного ПО для сенсорных экранов ультравысокого разрешения (4K). Проект включает создание 21 военно-технического трехмерного ролика (7 основных сценариев и 14 вариантов развития событий на выбор пользователя). В рамках проекта осуществлен полный цикл: от детального моделирования и текстурирования конкретных образцов военной техники (минометы, ствольная артиллерия, РСЗО, тактические и зенитные ракеты, комплексы обслуживания стрельбы) до развертывания масштабных локаций и просчета тяжелой графики на удаленных рендер-фермах. Программная часть для тачскрина реализует разветвленный сценарий: система бесшовно реагирует на выбор пользователя в критические моменты симуляции и мгновенно воспроизводит соответствующий финал.', 'video2.jpg', '')">
+                <div class="portfolio-item" data-cat="video" onclick="openModal('Интерактивный симуляционный комплекс артиллерийских систем', 'Масштабный проект на стыке высокодетализированного 3D-продакшна и разработки интерактивного ПО для сенсорных экранов ультравысокого разрешения (4K). Проект включает создание 21 военно-технического трехмерного ролика (7 основных сценариев и 14 вариантов развития событий на выбор пользователя). В рамках проекта осуществлен полный цикл: от детального моделирования и текстурирования конкретных образцов военной техники (минометы, ствольная артиллерия, РСЗО, тактические и зенитные ракеты, комплексы обслуживания стрельбы) до развертывания масштабных локаций и просчета тяжелой графики на удаленных рендер-фермах. Программная часть для тачскрина реализует разветвленный сценарий: система бесшовно реагирует на выбор пользователя в критические моменты симуляции и мгновенно воспроизводит соответствующий финал.', 'video2.jpg', '')">
                     <div class="portfolio-img" style="background-image: url('video2.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Видеоконтент</span>
@@ -442,18 +340,14 @@
                     </div>
                 </div>
 
-                <!-- ЛОГОТИП 2 В ИНСТАЛЛЯЦИЯХ: Информационная система -->
                 <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивная ГИС-система «Ближе к движению!»', 'Разработка UX/UI дизайна и логики оффлайн-приложения для крупного федерального протезно-ортопедического предприятия. Программное обеспечение развернуто на интерактивных сенсорных столах в приемных залах. Система включает интерактивную SVG-карту РФ с делением на регионы, динамический счетчик выполненных заказов (более 1 000 000 изделий) и сквозную навигацию по 71 филиалу страны. Интерфейс адаптирован под интуитивное жестовое управление, содержит крупные контрастные элементы управления для инклюзивной среды и оснащен автоматическим таймером возврата на стартовый экран.', 'install2.jpg', '')">
-                    <!-- Вот эта строчка отвечает за мини-изображение на главной странице: -->
                     <div class="portfolio-img" style="background-image: url('install2.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
                         <span class="portfolio-tag">Инсталляции</span>
-                        <!-- Вот этот текст отображается на главной странице под миниатюрой: -->
-                        <h3>Информационная ГИС-система «Ближе к движению!»</h3>
-                        <p>UX/UI дизайн оффлайн-софта для сенсорных столов: интерактивная карта, навигация по 71 филиалу и инклюзивный интерфейс.</p>
+                        <h3>Интерактивная ГИС-система «Ближе к движению!»</h3>
+                        <p>Информационный софт для сенсорных столов: интерактивная SVG-карта России, аналитические счетчики и инклюзивный интерфейс.</p>
                     </div>
                 </div>
-                <!-- ЛОГОТИП 3 В ИНСТАЛЛЯЦИЯХ: Тач-стол Россия-Африка -->
                 <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивный комплекс «ПАТЭС» для экономического форума Россия–Африка', 'Разработка игрового программного обеспечения под ОС Windows 10 для интерактивных сенсорных столов большого формата. Проект разработан для демонстрации на международном форуме и включает интерактивную 3D-модель Плавучей атомной теплоэлектростанции (ПАТЭС). Пользователи могут кастомизировать и раскрашивать элементы станции в цвета выбранного национального флага одной из африканских стран с помощью интуитивного тач-интерфейса. Реализована бесшовная интеграция с печатным оборудованием: финальный персонализированный рендер мгновенно отправляется на принтер для термосублимационной печати на виниловых магнитах. Посетители форума получали уникальный физический сувенир в режиме реального времени. Система оптимизирована для работы в условиях экстремально высокого трафика выставки.', 'install3.jpg', '')">
                     <div class="portfolio-img" style="background-image: url('install3.jpg'); background-color: #111;"></div>
                     <div class="portfolio-info">
@@ -465,112 +359,3 @@
 
             </div>
         </section>
-
-        <footer class="info-wrapper" id="contacts">
-            <div class="info-block">
-                <h3>Карточка предприятия</h3>
-                <ul class="requisites-list">
-                    <li><span>Компания:</span> ИП Игошин</li>
-                    <li><span>ИНН:</span> 7701186067</li>
-                    <li><span>ОГРН:</span> 1027739496014</li>
-                </ul>
-                <div class="tender-badge">
-                    ✓ Полное соответствие требованиям 44-ФЗ и 223-ФЗ. Аккредитация для участия в государственных и корпоративных закупках ИТ-решений.
-                </div>
-            </div>
-
-            <div class="contacts-block">
-                <h3>Контакты</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Для направления технических заданий и приглашений к тендерам:</p>
-                <ul class="contacts-list">
-                    <li>Email: <a href="mailto:info@yourdomain.ru" style="color: #ffffff; text-decoration: none; font-weight: 600;">info@yourdomain.ru</a></li>
-                    <li>График: Пн — Пт, 10:00 — 19:00 (МСК)</li>
-                </ul>
-            </div>
-        </footer>
-    </div>
-
-    <div id="projectModal" class="modal" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-modal" onclick="document.getElementById('projectModal').classList.remove('active')">&times;</span>
-            <div id="modalVideoWrapper" class="modal-video-container" style="display: none;">
-                <iframe id="modalVideo" src="" allowfullscreen></iframe>
-            </div>
-            <img id="modalImg" src="" alt="" style="width: 100%; border-radius: 8px; margin-bottom: 20px; display: none; max-height: 400px; object-fit: cover;">
-            <h2 id="modalTitle" style="margin-bottom: 15px;"></h2>
-            <p id="modalDesc" style="color: var(--text-muted); font-size: 1.05rem;"></p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Инициализация 3D-сети на фоне
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00f0ff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 4, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00f0ff",
-                    "opacity": 0.35,
-                    "width": 1.5
-                },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 0.8 } } }
-            },
-            "retina_detect": true
-        });
-
-        // Интерактивная фильтрация проектов по 6 категориям
-        function filterProjects(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            if (event && event.target) {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                event.target.classList.add('active');
-            }
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-cat') === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Модальное окно
-        function openModal(title, desc, imgUrl, youtubeId) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerText = desc;
-            const videoWrapper = document.getElementById('modalVideoWrapper');
-            const iframe = document.getElementById('modalVideo');
-            const img = document.getElementById('modalImg');
-            if (youtubeId) {
-                iframe.src = "https://www.youtube.com/embed/" + youtubeId;
-                videoWrapper.style.display = 'block'; img.style.display = 'none';
-            } else {
-                iframe.src = ""; videoWrapper.style.display = 'none';
-                img.src = imgUrl; img.style.display = 'block';
-            }
-            document.getElementById('projectModal').classList.add('active');
-        }
-
-        function closeModal(event) {
-            document.getElementById('projectModal').classList.remove('active');
-            document.getElementById('modalVideo').src = "";
-        }
-    </script>
-</body>
-</html>
