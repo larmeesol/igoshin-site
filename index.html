@@ -2,9 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a12'/><path d='M30 25 L70 25 L70 35 L55 50 L70 65 L70 75 L30 75 L30 65 L45 50 L30 35 Z' fill='none' stroke='%2300f0ff' stroke-width='8' stroke-linejoin='round'/><circle cx='50' cy='50' r='6' fill='%239d4edd'/></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ИП Игошин — Мультимедийные решения и Интерактивные системы</title>
+    
+    <title>ИП Игошин — Мультимедийные решения, VR/AR и Интерактивные системы под ключ</title>
+    <meta name="description" content="Разработка интерактивного ПО, VR/AR тренажеров, 3D-анимации и мультимедийных систем полного цикла для музеев, корпораций и промышленности. Кейсы для Росатом, Северсталь.">
+    <meta name="keywords" content="ИП Игошин, мультимедийные решения, разработка VR AR, интерактивные инсталляции, видеопродакшн, 3D анимация, Росатом, Северсталь, интерактивный стол, цифровой макет">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ИП Игошин — Мультимедийные решения и Интерактивные системы">
+    <meta property="og:description" content="Превращаем сложные технологии в зрелищный интерактивный опыт. VR/AR, видеоконтент, инсталляции полного цикла.">
+    <meta property="og:url" content="https://igoshin.tech">
+    <meta property="og:image" content="arvr4.jpg">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a12'/><path d='M30 25 L70 25 L70 35 L55 50 L70 65 L70 75 L30 75 L30 65 L45 50 L30 35 Z' fill='none' stroke='%2300f0ff' stroke-width='8' stroke-linejoin='round'/><circle cx='50' cy='50' r='6' fill='%239d4edd'/></svg>">
+    
     <style>
         :root {
             --bg-color: #06080c;
@@ -32,7 +44,6 @@
             padding-bottom: 80px;
         }
 
-        /* Контейнер для интерактивной 3D-сети */
         #particles-js {
             position: fixed;
             top: 0;
@@ -40,19 +51,17 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            pointer-events: all;
+            pointer-events: none;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 design auto;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
             z-index: 2;
         }
 
-        /* Навигация */
         header {
             padding: 30px 0;
             display: flex;
@@ -68,7 +77,6 @@
         nav a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: all 0.3s ease; }
         nav a:hover { color: var(--accent-color); }
 
-        /* Главный экран */
         .hero { padding: 120px 0 80px 0; max-width: 900px; }
         .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px; text-shadow: 0 0 15px rgba(0, 240, 255, 0.2); }
         .hero h1 span { background: linear-gradient(45deg, var(--accent-color), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -90,11 +98,9 @@
         }
         .btn:hover { border-color: var(--accent-purple); box-shadow: 0 0 25px rgba(157, 78, 221, 0.5); transform: translateY(-2px); }
 
-        /* Заголовки секций */
         .section-title { font-size: 2.2rem; font-weight: 800; margin: 100px 0 15px 0; text-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
         .section-subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 50px; max-width: 700px; }
 
-        /* Сетка "Что мы создаем" */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 40px; }
         .service-card {
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
@@ -105,7 +111,6 @@
         .service-card h3::before { content: '//'; color: var(--accent-color); font-weight: 700; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Секция Полного Цикла */
         .workflow { background: rgba(157, 78, 221, 0.03); border: 1px dashed rgba(157, 78, 221, 0.3); padding: 40px; border-radius: 16px; margin-top: 60px; backdrop-filter: blur(5px); }
         .workflow h3 { font-size: 1.6rem; margin-bottom: 25px; text-shadow: 0 0 10px rgba(157, 78, 221, 0.3); }
         .steps-container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -113,7 +118,6 @@
         .step-num { font-size: 2rem; font-weight: 800; color: var(--accent-purple); margin-bottom: 5px; }
         .step-txt { font-size: 0.95rem; color: var(--text-main); font-weight: 600; }
 
-        /* Секция Клиенты и Доверие (Логотипы) */
         .clients-section { margin-top: 100px; }
         .clients-text { font-size: 1.2rem; color: var(--text-main); margin-bottom: 35px; max-width: 900px; line-height: 1.7; }
         .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
@@ -140,7 +144,6 @@
             filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.3)); 
         }
 
-        /* Стили галереи портфолио */
         .portfolio-filters { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
         .filter-btn {
             background: rgba(6, 8, 12, 0.6); border: 1px solid rgba(0, 240, 255, 0.3); color: var(--text-muted);
@@ -154,6 +157,7 @@
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
             overflow: hidden; transition: all 0.3s ease; cursor: pointer; backdrop-filter: blur(10px);
         }
+        .portfolio-item.hidden { display: none !important; }
         .portfolio-item:hover { border-color: var(--accent-purple); transform: scale(1.02); box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2); }
         .portfolio-img {
             width: 100%; height: 220px; background-size: cover; background-position: center;
@@ -169,7 +173,7 @@
             padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; font-weight: 700;
         }
 
-        /* Модальные окна */
+        /* Исправленные стили модального окна */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(6, 8, 12, 0.96); display: flex; align-items: center; justify-content: center;
@@ -178,15 +182,15 @@
         .modal.active { opacity: 1; pointer-events: auto; }
         .modal-content {
             background: #0a0c10; border: 1px solid var(--border-color); max-width: 800px;
-            width: 100%; border-radius: 16px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto;
+            width: 100%; border-radius: 16px; padding: 40px 30px 30px 30px; position: relative; max-height: 90vh; overflow-y: auto;
         }
-        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 2rem; color: var(--text-muted); cursor: pointer; transition: color 0.2s; }
-        .close-modal:hover { color: var(--text-main); }
-        .modal-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 20px; border-radius: 8px; background: #000; }
-        .modal-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .modal-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); }
+        .modal-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2.5rem; color: var(--text-muted); cursor: pointer; transition: color 0.2s; user-select: none; }
+        .close-modal:hover { color: var(--accent-color); }
 
-        /* Футер */
         .info-wrapper { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; border-top: 1px solid rgba(0, 240, 255, 0.2); padding-top: 60px; margin-top: 100px; }
+        .requisites-list { list-style: none; }
         .requisites-list li { margin-bottom: 12px; }
         .requisites-list span { color: var(--text-muted); display: inline-block; width: 110px; }
         .tender-badge { border: 1px dashed rgba(0, 240, 255, 0.3); padding: 20px; border-radius: 8px; margin-top: 30px; font-size: 0.95rem; background: rgba(0, 240, 255, 0.03); }
@@ -214,174 +218,228 @@
             </nav>
         </header>
 
-        <section class="hero">
-            <h1>Превращаем сложные технологии в <span>зрелищный интерактивный опыт</span></h1>
-            <p>Специализируемся на разработке комплексных мультимедийных решений для музеев, корпоративных пространств, выставочных экспозиций и промышленных предприятий. Создаем проекты полного цикла — от концепции до производства и запуска.</p>
-            <a href="#portfolio" class="btn">Смотреть портфолио</a>
-        </section>
+        <main>
+            <section class="hero">
+                <h1>Превращаем сложные технологии в <span>зрелищный интерактивный опыт</span></h1>
+                <p>Специализируемся на разработке комплексных мультимедийных решений для музеев, корпоративных пространств, выставочных экспозиций и промышленных предприятий. Создаем проекты полного цикла — от концепции до производства и запуска.</p>
+                <a href="#portfolio" class="btn">Смотреть портфолио</a>
+            </section>
 
-        <section id="what-we-do">
-            <h2 class="section-title">Что мы создаём</h2>
-            <p class="section-subtitle">Инженерный подход, прогрессивное программирование и передовой дизайн для решения сложнейших демонстрационных задач.</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>VR и AR решения</h3>
-                    <p>Иммерсивные виртуальные экскурсии по реальным производствам, интерактивные мобильные приложения и симуляторы для обучения персонала.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Видеоконтент</h3>
-                    <p>Профессиональный видеопродакшн: презентационные 3D-ролики, сложная технологическая анимация и графика для ультрашироких экранов.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Интерактивные инсталляции</h3>
-                    <p>Цифровые музейные экспозиции, сенсорные терминалы и мультимедийные системы, управляемые жестами на базе датчиков компьютерного зрения.</p>
-                </div>
-            </div>
-
-            <div class="workflow">
-                <h3>Проекты полного цикла</h3>
-                <div class="steps-container">
-                    <div class="step"><div class="step-num">01</div><div class="step-txt">Идея и концепция</div></div>
-                    <div class="step"><div class="step-num">02</div><div class="step-txt">Промышленный дизайн и 3D</div></div>
-                    <div class="step"><div class="step-num">03</div><div class="step-txt">Программирование и инженерия</div></div>
-                    <div class="step"><div class="step-num">04</div><div class="step-txt">Производство оборудования</div></div>
-                    <div class="step"><div class="step-num">05</div><div class="step-txt">Запуск на площадке</div></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="clients-section">
-            <h2 class="section-title">Клиенты и доверие</h2>
-            <p class="clients-text">
-                Нам доверяют предприятия <strong>Госкорпорации «Росатом»</strong>, ведущие металлургические холдинги, промышленные объединения, образовательные организации, крупные музеи и технологические лидеры России.
-            </p>
-            
-           <div class="clients-grid">
-                <div class="logo-placeholder">
-                    <img src="rosatom.png" alt="Росатом" class="client-logo">
-                </div>
+            <section id="what-we-do">
+                <h2 class="section-title">Что мы создаём</h2>
+                <p class="section-subtitle">Инженерный подход, прогрессивное программирование и передовой дизайн для решения сложнейших демонстрационных задач.</p>
                 
-                <div class="logo-placeholder">
-                    <img src="severstal.png" alt="Северсталь" class="client-logo">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>VR и AR решения</h3>
+                        <p>Иммерсивные виртуальные экскурсии по реальным производствам, интерактивные мобильные приложения и симуляторы для обучения персонала.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Видеоконтент</h3>
+                        <p>Профессиональный видеопродакшн: презентационные 3D-ролики, сложная технологическая анимация и графика для ультрашироких экранов.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Интерактивные инсталляции</h3>
+                        <p>Цифровые музейные экспозиции, сенсорные терминалы и мультимедийные системы, управляемые жестами на базе датчиков компьютерного зрения.</p>
+                    </div>
                 </div>
-                
-                <div class="logo-placeholder">
-                    <img src="uralhimmash.png" alt="Уралхиммаш" class="client-logo">
+
+                <div class="workflow">
+                    <h3>Проекты полного цикла</h3>
+                    <div class="steps-container">
+                        <div class="step"><div class="step-num">01</div><div class="step-txt">Идея и концепция</div></div>
+                        <div class="step"><div class="step-num">02</div><div class="step-txt">Промышленный дизайн и 3D</div></div>
+                        <div class="step"><div class="step-num">03</div><div class="step-txt">Программирование и инженерия</div></div>
+                        <div class="step"><div class="step-num">04</div><div class="step-txt">Производство оборудования</div></div>
+                        <div class="step"><div class="step-num">05</div><div class="step-txt">Запуск на площадке</div></div>
+                    </div>
                 </div>
+            </section>
+
+            <section class="clients-section">
+                <h2 class="section-title">Клиенты и доверие</h2>
+                <p class="clients-text">
+                    Нам доверяют предприятия <strong>Госкорпорации «Росатом»</strong>, ведущие металлургические холдинги, промышленные объединения, образовательные организации, крупные музеи и технологические лидеры России.
+                </p>
                 
-                <div class="logo-placeholder" style="flex-direction: column; gap: 2px; justify-content: center;">
-                    <span style="font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.4); text-align: center;">МУЗЕИ РФ</span>
-                    <span style="font-size: 0.6rem; color: var(--accent-purple); letter-spacing: 1px; text-align: center;">ЦИФРОВЫЕ ЭКСПОЗИЦИИ</span>
+               <div class="clients-grid">
+                    <div class="logo-placeholder">
+                        <img src="rosatom.png" alt="Госкорпорация Росатом" class="client-logo">
+                    </div>
+                    
+                    <div class="logo-placeholder">
+                        <img src="severstal.png" alt="ПАО Северсталь" class="client-logo">
+                    </div>
+                    
+                    <div class="logo-placeholder">
+                        <img src="uralhimmash.png" alt="АО Уралхиммаш" class="client-logo">
+                    </div>
+                    
+                    <div class="logo-placeholder" style="flex-direction: column; gap: 2px; justify-content: center;">
+                        <span style="font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.4); text-align: center;">МУЗЕИ РФ</span>
+                        <span style="font-size: 0.6rem; color: var(--accent-purple); letter-spacing: 1px; text-align: center;">ЦИФРОВЫЕ ЭКСПОЗИЦИИ</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio">
+                <h2 class="section-title">Реализованные проекты</h2>
+                <p class="section-subtitle">Ознакомьтесь с примерами внедрения наших программно-аппаратных комплексов, иммерсивных сред и интерактивных систем.</p>
+                
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
+                    <button class="filter-btn" onclick="filterProjects('arvr')">VR / AR</button>
+                    <button class="filter-btn" onclick="filterProjects('video')">Видеоконтент</button>
+                    <button class="filter-btn" onclick="filterProjects('install')">Инсталляции</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Цифровой макет площадки нефтегазового оборудования переработки', 'Разработка интерактивного B2B-приложения полного цикла для автономных шлемов смешанной реальности HTC Vive XR. Проект включает создание оптимизированных 3D-моделей (FBX/OBJ) блочного оборудования, реакторов, колонн, адсорберов и шаровых резервуаров с текстурами 2K/4K и LOD-оптимизацией под мобильное железо.<br><br><b>Режимы работы:</b><br>1. Макет «на столе» (XR): круговой осмотр всей площадки в масштабе с анимированным персоналом для понимания габаритов.<br>2. Детальный просмотр: «отрыв» выбранного объекта контроллером, круговое вращение, вывод интерактивной карточки ТТХ и переход к схеме в разрезе (демонстрация внутренней среды, толщины стенок и датчиков КИП).<br>3. Режим «Игра»: интерактивный сценарий внутри виртуальной среды.<br><br><b>Анимационные сценарии:</b> симуляция движения газов/жидкостей по трубам и реакторам, а также детальная пошаговая ретроспектива сборки шарового резервуара (от фундамента и сварки лепестков до антикоррозийной покраски и проверки герметичности).<br><br>Реализована локализация (русский/английский), голосовое сопровождение диктором и беспроводной стриминг картинки из шлема на ТВ через Miracast в реальном времени.')">
+                        <div class="portfolio-img" style="background-image: url('arvr4.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">VR / AR</span>
+                            <h3>Цифровой XR-макет нефтегазовой площадки</h3>
+                            <p>Интерактивное приложение для HTC Vive XR: режим «макета на столе», пошаговая анимация сборки оборудования и демонстрация систем в разрезе.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Промышленный VR-тренажер', 'Иммерсивный симулятор для безопасного интерактивного обучения сотрудников действиям при ЧС на производстве.')">
+                        <div class="portfolio-img" style="background-image: url('arvr1.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">VR / AR</span>
+                            <h3>VR-симулятор нефтеперерабатывающего узла</h3>
+                            <p>Точная симуляция технологических цепочек, физики газов и работы с инженерным меню.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Виртуальная экскурсия по заводу', 'Разработка приложения для VR-шлемов со сферическим видео 8K и интерактивными инфоточками.')">
+                        <div class="portfolio-img" style="background-image: url('arvr2.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">VR / AR</span>
+                            <h3>3D-тур по металлургическому комбинату</h3>
+                            <p>Безопасный доступ на закрытые участки производства для клиентов и инвесторов.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Интерактивный AR-комплекс «Металлотоpиум» для ПАО «Северсталь»', 'Разработка игрового программного обеспечения дополненной реальности (AR) под ОС Windows для Центра металлургического промышленности. Проект включает два независимых интерактивных сюжета: индустриальную раскраску «Металлургический транспорт» (12 анимированных единиц техники ЧерМК: локомотивы, шлаковозы, БЕЛАЗы) и коллективный паззл «Собери комбинат». Программа считывает отсканированные детские рисунки формата А4, по угловым QR-маркерам мгновенно распознает тип объекта, переносит уникальную текстуру на низкополигональную 3D-модель (FBX) и выводит ожившую трехмерную сцену на проекционный экран со звуковым сопровождением (.mp3). Работает полностью автономно без доступа в интернет.')">
+                        <div class="portfolio-img" style="background-image: url('arvr3.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">VR / AR</span>
+                            <h3>AR-раскраска «Металлотоpиум» — Северсталь</h3>
+                            <p>Музейный программно-аппаратный комплекс: сканирование рисунков, распознавание по QR-кодам и генерация 3D-текстур на проекции.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="video" onclick="openModal('Медиапроизводство для Корпоративной Академии Росатома', 'Полный цикл производства (Production & Post-production) двух имиджевых отчетных видеороликов для международных мероприятий с участием представителей министерств стран БРИКС. Наша команда (режиссер, 2 оператора, видеоинженер) организовала многокамерную съемку (до 6 цифровых кинокамер одновременно) со сложным студийным светом, телесуфлерами и беспроводными системами телесендеров. В рамках пост-продакшна выполнена глубокая цветокоррекция, кеинг (обработка хромакея для замены фона спикеров на брендированное окружение), профессиональный саунд-дизайн, частотная коррекция синхронов и интеграция корпоративной инфографики. Проекты сданы строго в жесткие протокольные сроки.')">
+                        <div class="portfolio-img" style="background-image: url('video1.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">Video</span>
+                            <h3>Медиапроизводство БРИКС — Росатом</h3>
+                            <p>Создание двух отчетных фильмов под ключ: многокамерная съемка спикеров БРИКС, хромакей, инфографика и саунд-дизайн.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="video" onclick="openModal('Интерактивный симуляционный комплекс артиллерийских систем', 'Масштабный проект на стыке высокодетализированного 3D-продакшна и разработки интерактивного ПО для сенсорных экранов ультравысокого разрешения (4K). Проект включает создание 21 военно-технического трехмерного ролика (7 основных сценариев и 14 вариантов развития событий на выбор пользователя). В рамках проекта осуществлен полный цикл: от детального моделирования и текстурирования конкретных образцов военной техники (минометы, ствольная артиллерия, РСЗО, тактические и зенитные ракеты, комплексы обслуживания стрельбы) до развертывания масштабных локаций и просчета тяжелой графики на удаленных рендер-фермах. Программная часть для тачскрина реализует разветвленный сценарий: система бесшовно реагирует на выбор пользователя в критические моменты симуляции и мгновенно воспроизводит соответствующий финал.')">
+                        <div class="portfolio-img" style="background-image: url('video2.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">Видеоконтент</span>
+                            <h3>Интерактивный 4K-комплекс тактической артиллерии</h3>
+                            <p>Создание 21 трехмерного фильма в 4K и разработка ПО для тач-панелей с разветвленной логикой боевых сценариев.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="video" onclick="openModal('Имиджевый CG-фильм «СМЗ. Металл времени» для Росатом Недра', 'Разработка концепции, детального сценария и полный продакшн высокотехнологичного 3D-фильма для Соликамского магниевого завода (СМЗ). В основе визуального языка — бесшовный пролет камеры по «линии времени» сквозь четыре эпохи: от монументального сталинского ампира 1930-х до футуристичных сценариев 2028+. Специалисты студии реализовали фотореалистичную симуляцию сред (расплавленный металл, огонь, пар, физика газов), смоделировали технику разных лет (самолеты ЯК-1, МиГ-3, ровер «Луноход-1», лайнер МС-21) и создали комплексную инфографику. Фильм наглядно отражает долю предприятия в стратегической металлургии (75% магния РФ, 100% ниобия и тантала) и интегрирует созвездие современных сфер применения материалов.')">
+                        <div class="portfolio-img" style="background-image: url('video3.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">Видеоконтент</span>
+                            <h3>Имиджевый 3D-фильм «Металл времени» — СМЗ</h3>
+                            <p>CG-продакшн для Росатом Недра: трехмерная линия времени, фотореалистичный рендеринг металлургических процессов и инфографика.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивная ГИС-система «Ближе к движению!»', 'Разработка UX/UI дизайна и логики оффлайн-приложения для крупного федерального протезно-ортопедического предприятия. Программное обеспечение развернуто на интерактивных сенсорных столах в приемных залах. Система включает интерактивную SVG-карту РФ с делением на регионы, динамический счетчик выполненных заказов (более 1 000 000 изделий) и сквозную навигацию по 71 филиалу страны. Интерфейс адаптирован под интуитивное жестовое управление, содержит крупные контрастные элементы управления для инклюзивной среды и оснащен автоматическим таймером возврата на стартовый экран.')">
+                        <div class="portfolio-img" style="background-image: url('install2.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">Инсталляции</span>
+                            <h3>Интерактивная ГИС-система «Ближе к движению!»</h3>
+                            <p>Информационный софт для сенсорных столов: интерактивная SVG-карта России, аналитические счетчики и инклюзивный интерфейс.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивный комплекс «ПАТЭС» для экономического форума Россия–Африка', 'Разработка игрового программного обеспечения под ОС Windows 10 для интерактивных сенсорных столов большого формата. Проект разработан для демонстрации на международном форуме и включает интерактивную 3D-модель Плавучей атомной теплоэлектростанции (ПАТЭС). Пользователи могут кастомизировать и раскрашивать элементы станции в цвета выбранного национального флага одной из африканских стран с помощью интуитивного тач-интерфейса. Реализована бесшовная интеграция с печатным оборудованием: финальный персонализированный рендер мгновенно отправляется на принтер для термосублимационной печати на виниловых магнитах. Посетители форума получали уникальный физический сувенир в режиме реального времени. Система оптимизирована для работы в условиях экстремально высокого трафика выставки.')">
+                        <div class="portfolio-img" style="background-image: url('install3.jpg'); background-color: #111;"></div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">Инсталляции</span>
+                            <h3>Интерактивный тач-стол «ПАТЭС» — Россия-Африка</h3>
+                            <p>ПО для сенсорных столов: кастомизация 3D-модели атомной станции в цвета национальных флагов и моментальная печать сувенирных магнитов.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <div id="portfolioModal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content">
+                <span class="close-modal" onclick="document.getElementById('portfolioModal').classList.remove('active')">&times;</span>
+                <h3 id="modalTitle" class="modal-title">Название проекта</h3>
+                <div id="modalDesc" class="modal-desc">Описание проекта</div>
+            </div>
+        </div>
+
+        <footer id="contacts">
+            <div class="info-wrapper">
+                <div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Контакты и реквизиты</h2>
+                    <ul class="requisites-list">
+                        <li><span>Исполнитель:</span> ИП Игошин</li>
+                        <li><span>Статус:</span> Действующее микропредприятие</li>
+                        <li><span>Гео:</span> Российская Федерация</li>
+                    </ul>
+                    <div class="tender-badge">
+                        Готовы к участию в тендерах, государственных закупках (44-ФЗ/223-ФЗ) и работе по прямым договорам с юридическими лицами.
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 ИГОШИН.TECH. Все права защищены.</p>
                 </div>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <section id="portfolio">
-            <h2 class="section-title">Реализованные проекты</h2>
-            <p class="section-subtitle">Ознакомьтесь с примерами внедрения наших программно-аппаратных комплексов, иммерсивных сред и интерактивных систем.</p>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
-                <button class="filter-btn" onclick="filterProjects('arvr')">VR / AR</button>
-                <button class="filter-btn" onclick="filterProjects('video')">Видеоконтент</button>
-                <button class="filter-btn" onclick="filterProjects('install')">Инсталляции</button>
-            </div>
+    <script>
+        // Функция фильтрации портфолио
+        function filterProjects(category) {
+            // Переключение активного класса у кнопок
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-            <div class="portfolio-grid">
-                
-                <!-- СЕКЦИЯ: VR / AR -->
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Цифровой макет площадки нефтегазового оборудования переработки', 'Разработка интерактивного B2B-приложения полного цикла для автономных шлемов смешанной реальности HTC Vive XR. Проект включает создание оптимизированных 3D-моделей (FBX/OBJ) блочного оборудования, реакторов, колонн, адсорберов и шаровых резервуаров с текстурами 2K/4K и LOD-оптимизацией под мобильное железо.<br><br><b>Режимы работы:</b><br>1. Макет «на столе» (XR): круговой осмотр всей площадки в масштабе с анимированным персоналом для понимания габаритов.<br>2. Детальный просмотр: «отрыв» выбранного объекта контроллером, круговое вращение, вывод интерактивной карточки ТТХ и переход к схеме в разрезе (демонстрация внутренней среды, толщины стенок и датчиков КИП).<br>3. Режим «Игра»: интерактивный сценарий внутри виртуальной среды.<br><br><b>Анимационные сценарии:</b> симуляция движения газов/жидкостей по трубам и реакторам, а также детальная пошаговая ретроспектива сборки шарового резервуара (от фундамента и сварки лепестков до антикоррозийной покраски и проверки герметичности).<br><br>Реализована локализация (русский/английский), голосовое сопровождение диктором и беспроводной стриминг картинки из шлема на ТВ через Miracast в реальном времени.', 'arvr4.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr4.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>Цифровой XR-макет нефтегазовой площадки</h3>
-                        <p>Интерактивное приложение для HTC Vive XR: режим «макета на столе», пошаговая анимация сборки оборудования и демонстрация систем в разрезе.</p>
-                    </div>
-                </div>
+            // Фильтрация карточек
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-cat') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
 
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Промышленный VR-тренажер', 'Иммерсивный симулятор для безопасного интерактивного обучения сотрудников действиям при ЧС на производстве.', 'arvr1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr1.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>VR-симулятор нефтеперерабатывающего узла</h3>
-                        <p>Точная симуляция технологических цепочек, физики газов и работы с инженерным меню.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Виртуальная экскурсия по заводу', 'Разработка приложения для VR-шлемов со сферическим видео 8K и интерактивными инфоточками.', 'arvr2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>3D-тур по металлургическому комбинатy</h3>
-                        <p>Безопасный доступ на закрытые участки производства для клиентов и инвесторов.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Интерактивный AR-комплекс «Металлотоpиум» для ПАО «Северсталь»', 'Разработка игрового программного обеспечения дополненной реальности (AR) под ОС Windows для Центра металлургического промышленности. Проект включает два независимых интерактивных сюжета: индустриальную раскраску «Металлургический транспорт» (12 анимированных единиц техники ЧерМК: локомотивы, шлаковозы, БЕЛАЗы) и коллективный паззл «Собери комбинат». Программа считывает отсканированные детские рисунки формата А4, по угловым QR-маркерам мгновенно распознает тип объекта, переносит уникальную текстуру на низкополигональную 3D-модель (FBX) и выводит ожившую трехмерную сцену на проекционный экран со звуковым сопровождением (.mp3). Работает полностью автономно без доступа в интернет.', 'arvr3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>AR-раскраска «Металлотоpиум» — Северсталь</h3>
-                        <p>Музейный программно-аппаратный комплекс: сканирование рисунков, распознавание по QR-кодам и генерация 3D-текстур на проекции.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Виртуальная экскурсия по заводу', 'Разработка приложения для VR-шлемов со сферическим видео 8K и интерактивными инфоточками.', 'arvr2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>3D-тур по металлургическому комбинату</h3>
-                        <p>Безопасный доступ на закрытые участки производства для клиентов и инвесторов.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="arvr" onclick="openModal('Интерактивный AR-комплекс «Металлотоpиум» для ПАО «Северсталь»', 'Разработка игрового программного обеспечения дополненной реальности (AR) под ОС Windows для Центра металлургического промышленности. Проект включает два независимых интерактивных сюжета: индустриальную раскраску «Металлургический транспорт» (12 анимированных единиц техники ЧерМК: локомотивы, шлаковозы, БЕЛАЗы) и коллективный паззл «Собери комбинат». Программа считывает отсканированные детские рисунки формата А4, по угловым QR-маркерам мгновенно распознает тип объекта, переносит уникальную текстуру на низкополигональную 3D-модель (FBX) и выводит ожившую трехмерную сцену на проекционный экран со звуковым сопровождением (.mp3). Работает полностью автономно без доступа в интернет.', 'arvr3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('arvr3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">VR / AR</span>
-                        <h3>AR-раскраска «Металлотоpиум» — Северсталь</h3>
-                        <p>Музейный программно-аппаратный комплекс: сканирование рисунков, распознавание по QR-кодам и генерация 3D-текстур на проекции.</p>
-                    </div>
-                </div>
+        // Логика модального окна
+        function openModal(title, description) {
+            document.getElementById('modalTitle').innerHTML = title;
+            document.getElementById('modalDesc').innerHTML = description;
+            document.getElementById('portfolioModal').classList.add('active');
+        }
 
-                <div class="portfolio-item" data-cat="video" onclick="openModal('Медиапроизводство для Корпоративной Академии Росатома', 'Полный цикл производства (Production & Post-production) двух имиджевых отчетных видеороликов для международных мероприятий с участием представителей министерств стран БРИКС. Наша команда (режиссер, 2 оператора, видеоинженер) организовала многокамерную съемку (до 6 цифровых кинокамер одновременно) со сложным студийным светом, телесуфлерами и беспроводными системами телесендеров. В рамках пост-продакшна выполнена глубокая цветокоррекция, кеинг (обработка хромакея для замены фона спикеров на брендированное окружение), профессиональный саунд-дизайн, частотная коррекция синхронов и интеграция корпоративной инфографики. Проекты сданы строго в жесткие протокольные сроки.', 'video1.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('video1.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Video</span>
-                        <h3>Медиапроизводство БРИКС — Росатом</h3>
-                        <p>Создание двух отчетных фильмов под ключ: многокамерная съемка спикеров БРИКС, хромакей, инфографика и саунд-дизайн.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="video" onclick="openModal('Интерактивный симуляционный комплекс артиллерийских систем', 'Масштабный проект на стыке высокодетализированного 3D-продакшна и разработки интерактивного ПО для сенсорных экранов ультравысокого разрешения (4K). Проект включает создание 21 военно-технического трехмерного ролика (7 основных сценариев и 14 вариантов развития событий на выбор пользователя). В рамках проекта осуществлен полный цикл: от детального моделирования и текстурирования конкретных образцов военной техники (минометы, ствольная артиллерия, РСЗО, тактические и зенитные ракеты, комплексы обслуживания стрельбы) до развертывания масштабных локаций и просчета тяжелой графики на удаленных рендер-фермах. Программная часть для тачскрина реализует разветвленный сценарий: система бесшовно реагирует на выбор пользователя в критические моменты симуляции и мгновенно воспроизводит соответствующий финал.', 'video2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('video2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Видеоконтент</span>
-                        <h3>Интерактивный 4K-комплекс тактической артиллерии</h3>
-                        <p>Создание 21 трехмерного фильма в 4K и разработка ПО для тач-панелей с разветвленной логикой боевых сценариев.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="video" onclick="openModal('Имиджевый CG-фильм «СМЗ. Металл времени» для Росатом Недра', 'Разработка концепции, детального сценария и полный продакшн высокотехнологичного 3D-фильма для Соликамского магниевого завода (СМЗ). В основе визуального языка — бесшовный пролет камеры по «линии времени» сквозь четыре эпохи: от монументального сталинского ампира 1930-х до футуристичных сценариев 2028+. Специалисты студии реализовали фотореалистичную симуляцию сред (расплавленный металл, огонь, пар, физика газов), смоделировали технику разных лет (самолеты ЯК-1, МиГ-3, ровер «Луноход-1», лайнер МС-21) и создали комплексную инфографику. Фильм наглядно отражает долю предприятия в стратегической металлургии (75% магния РФ, 100% ниобия и тантала) и интегрирует созвездие современных сфер применения материалов.', 'video3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('video3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Видеоконтент</span>
-                        <h3>Имиджевый 3D-фильм «Металл времени» — СМЗ</h3>
-                        <p>CG-продакшн для Росатом Недра: трехмерная линия времени, фотореалистичный рендеринг металлургических процессов и инфографика.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивная ГИС-система «Ближе к движению!»', 'Разработка UX/UI дизайна и логики оффлайн-приложения для крупного федерального протезно-ортопедического предприятия. Программное обеспечение развернуто на интерактивных сенсорных столах в приемных залах. Система включает интерактивную SVG-карту РФ с делением на регионы, динамический счетчик выполненных заказов (более 1 000 000 изделий) и сквозную навигацию по 71 филиалу страны. Интерфейс адаптирован под интуитивное жестовое управление, содержит крупные контрастные элементы управления для инклюзивной среды и оснащен автоматическим таймером возврата на стартовый экран.', 'install2.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('install2.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Инсталляции</span>
-                        <h3>Интерактивная ГИС-система «Ближе к движению!»</h3>
-                        <p>Информационный софт для сенсорных столов: интерактивная SVG-карта России, аналитические счетчики и инклюзивный интерфейс.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-cat="install" onclick="openModal('Интерактивный комплекс «ПАТЭС» для экономического форума Россия–Африка', 'Разработка игрового программного обеспечения под ОС Windows 10 для интерактивных сенсорных столов большого формата. Проект разработан для демонстрации на международном форуме и включает интерактивную 3D-модель Плавучей атомной теплоэлектростанции (ПАТЭС). Пользователи могут кастомизировать и раскрашивать элементы станции в цвета выбранного национального флага одной из африканских стран с помощью интуитивного тач-интерфейса. Реализована бесшовная интеграция с печатным оборудованием: финальный персонализированный рендер мгновенно отправляется на принтер для термосублимационной печати на виниловых магнитах. Посетители форума получали уникальный физический сувенир в режиме реального времени. Система оптимизирована для работы в условиях экстремально высокого трафика выставки.', 'install3.jpg', '')">
-                    <div class="portfolio-img" style="background-image: url('install3.jpg'); background-color: #111;"></div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Инсталляции</span>
-                        <h3>Интерактивный тач-стол «ПАТЭС» — Россия-Африка</h3>
-                        <p>ПО для сенсорных столов: кастомизация 3D-модели атомной станции в цвета национальных флагов и моментальная печать сувенирных магнитов.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+        function closeModal(event) {
+            // Закрываем, только если кликнули по серому фону вокруг окна
+            if (event.target.id === 'portfolioModal') {
+                document.getElementById('portfolioModal').classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
