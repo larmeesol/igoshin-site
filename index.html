@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>ИП Игошин — Мультимедийные решения, VR/AR и Интерактивные системы под ключ</title>
+    <title>ИП Игошин Е.С. — Мультимедийные решения, VR/AR и Интерактивные системы под ключ</title>
     <meta name="description" content="Разработка интерактивного ПО, VR/AR тренажеров, 3D-анимации и мультимедийных систем полного цикла для музеев, корпораций и промышленности. Кейсы для Росатом, Северсталь.">
     <meta name="keywords" content="ИП Игошин, мультимедийные решения, разработка VR AR, интерактивные инсталляции, видеопродакшн, 3D анимация, Росатом, Северсталь, интерактивный стол, цифровой макет">
     <meta name="robots" content="index, follow">
@@ -209,7 +209,7 @@
 
     <div class="container">
         <header id="about">
-            <a href="#" class="logo">ИГОШИН<span>.TECH</span></a>
+            <a href="#" class="logo">IGOSHIN<span>.TECH</span></a>
             <nav>
                 <a href="#about">О компании</a>
                 <a href="#what-we-do">Что мы создаём</a>
@@ -303,25 +303,6 @@
                             <p>Интерактивное приложение для HTC Vive XR: режим «макета на столе», пошаговая анимация сборки оборудования и демонстрация систем в разрезе.</p>
                         </div>
                     </div>
-
-                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Промышленный VR-тренажер', 'Иммерсивный симулятор для безопасного интерактивного обучения сотрудников действиям при ЧС на производстве.')">
-                        <div class="portfolio-img" style="background-image: url('arvr1.jpg'); background-color: #111;"></div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag">VR / AR</span>
-                            <h3>VR-симулятор нефтеперерабатывающего узла</h3>
-                            <p>Точная симуляция технологических цепочек, физики газов и работы с инженерным меню.</p>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-cat="arvr" onclick="openModal('Виртуальная экскурсия по заводу', 'Разработка приложения для VR-шлемов со сферическим видео 8K и интерактивными инфоточками.')">
-                        <div class="portfolio-img" style="background-image: url('arvr2.jpg'); background-color: #111;"></div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag">VR / AR</span>
-                            <h3>3D-тур по металлургическому комбинату</h3>
-                            <p>Безопасный доступ на закрытые участки производства для клиентов и инвесторов.</p>
-                        </div>
-                    </div>
-
                     <div class="portfolio-item" data-cat="arvr" onclick="openModal('Интерактивный AR-комплекс «Металлотоpиум» для ПАО «Северсталь»', 'Разработка игрового программного обеспечения дополненной реальности (AR) под ОС Windows для Центра металлургического промышленности. Проект включает два независимых интерактивных сюжета: индустриальную раскраску «Металлургический транспорт» (12 анимированных единиц техники ЧерМК: локомотивы, шлаковозы, БЕЛАЗы) и коллективный паззл «Собери комбинат». Программа считывает отсканированные детские рисунки формата А4, по угловым QR-маркерам мгновенно распознает тип объекта, переносит уникальную текстуру на низкополигональную 3D-модель (FBX) и выводит ожившую трехмерную сцену на проекционный экран со звуковым сопровождением (.mp3). Работает полностью автономно без доступа в интернет.')">
                         <div class="portfolio-img" style="background-image: url('arvr3.jpg'); background-color: #111;"></div>
                         <div class="portfolio-info">
@@ -334,7 +315,7 @@
                     <div class="portfolio-item" data-cat="video" onclick="openModal('Медиапроизводство для Корпоративной Академии Росатома', 'Полный цикл производства (Production & Post-production) двух имиджевых отчетных видеороликов для международных мероприятий с участием представителей министерств стран БРИКС. Наша команда (режиссер, 2 оператора, видеоинженер) организовала многокамерную съемку (до 6 цифровых кинокамер одновременно) со сложным студийным светом, телесуфлерами и беспроводными системами телесендеров. В рамках пост-продакшна выполнена глубокая цветокоррекция, кеинг (обработка хромакея для замены фона спикеров на брендированное окружение), профессиональный саунд-дизайн, частотная коррекция синхронов и интеграция корпоративной инфографики. Проекты сданы строго в жесткие протокольные сроки.')">
                         <div class="portfolio-img" style="background-image: url('video1.jpg'); background-color: #111;"></div>
                         <div class="portfolio-info">
-                            <span class="portfolio-tag">Video</span>
+                            <span class="portfolio-tag">Видеоконтент</span>
                             <h3>Медиапроизводство БРИКС — Росатом</h3>
                             <p>Создание двух отчетных фильмов под ключ: многокамерная съемка спикеров БРИКС, хромакей, инфографика и саунд-дизайн.</p>
                         </div>
@@ -380,9 +361,12 @@
             </section>
         </main>
 
+       <!-- Исправленное модальное окно с выводом большой картинки -->
         <div id="portfolioModal" class="modal" onclick="closeModal(event)">
             <div class="modal-content">
                 <span class="close-modal" onclick="document.getElementById('portfolioModal').classList.remove('active')">&times;</span>
+                <!-- Сюда будет подгружаться изображение -->
+                <div id="modalImg" class="modal-img-large"></div>
                 <h3 id="modalTitle" class="modal-title">Название проекта</h3>
                 <div id="modalDesc" class="modal-desc">Описание проекта</div>
             </div>
@@ -393,16 +377,16 @@
                 <div>
                     <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Контакты и реквизиты</h2>
                     <ul class="requisites-list">
-                        <li><span>Исполнитель:</span> ИП Игошин</li>
-                        <li><span>Статус:</span> Действующее микропредприятие</li>
-                        <li><span>Гео:</span> Российская Федерация</li>
+                        <li><span>Исполнитель:</span> ИП Игошин Е.С.</li>
+                        <li><span>ИНН:</span> 362704381553</li>
+                        <li><span>ОГРНИП:</span> 319784700281368</li>
                     </ul>
                     <div class="tender-badge">
                         Готовы к участию в тендерах, государственных закупках (44-ФЗ/223-ФЗ) и работе по прямым договорам с юридическими лицами.
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; justify-content: flex-end; text-align: right;">
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 ИГОШИН.TECH. Все права защищены.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 IGOSHIN.TECH. Все права защищены.</p>
                 </div>
             </div>
         </footer>
