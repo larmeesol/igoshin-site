@@ -390,8 +390,11 @@
                 <li><span>Исполнитель:</span> ИП Игошин Е.С.</li>
                 <li><span>ИНН:</span> 362704381553</li>
                 <li><span>ОГРНИП:</span> 319784700281368</li>
-                <!-- Сделали email кликабельным с темой письма для ТКП -->
-                <li><span>Email (ТКП):</span> <a href="mailto:info@igoshin.tech?subject=Запрос ТКП" class="email-link">info@igoshin.tech</a></li>
+                <!-- Мейл теперь белый, при наведении подсвечивается бирюзовым -->
+                <li>
+                    <span>Email (ТКП):</span> 
+                    <a href="mailto:info@igoshin.tech?subject=Запрос ТКП" style="color: #ffffff; text-decoration: none; font-weight: 700; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: all 0.3s ease;" onmouseover="this.style.color='#00f0ff'; this.style.borderBottomColor='#00f0ff'" onmouseout="this.style.color='#ffffff'; this.style.borderBottomColor='rgba(255,255,255,0.4)'">info@igoshin.tech</a>
+                </li>
             </ul>
             <div class="tender-badge">
                 Готовы к участию в тендерах, государственных закупках (44-ФЗ/223-ФЗ) и работе по прямым договорам с юридическими лицами. Для оперативного расчета стоимости отправляйте ТЗ на почту.
@@ -403,26 +406,32 @@
     </div>
 </footer>
 
-<!-- ПОДКЛЮЧЕНИЕ И НАСТРОЙКА АНИМИРОВАННОЙ СЕТКИ (PARTICLES.JS) -->
+<!-- ЯРКАЯ АНИМИРОВАННАЯ СЕТКА (PARTICLES.JS) -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
     particlesJS('particles-js', {
         "particles": {
-            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+            "number": { 
+                "value": 90, /* Увеличили количество узлов для плотности */
+                "density": { "enable": true, "value_area": 800 } 
+            },
             "color": { "value": "#00f0ff" },
             "shape": { "type": "circle" },
-            "opacity": { "value": 0.2, "random": false },
-            "size": { "value": 2, "random": true },
+            "opacity": { 
+                "value": 0.4, /* Сделали точки более видимыми */
+                "random": false 
+            },
+            "size": { "value": 2.5, "random": true },
             "line_linked": {
                 "enable": true,
-                "distance": 150,
+                "distance": 140,
                 "color": "#00f0ff",
-                "opacity": 0.15,
-                "width": 1
+                "opacity": 0.45, /* Подняли яркость самих линий сетки в 3 раза */
+                "width": 1.2
             },
             "move": {
                 "enable": true,
-                "speed": 1.5,
+                "speed": 1.8, /* Чуть ускорили движение */
                 "direction": "none",
                 "random": false,
                 "straight": false,
@@ -433,12 +442,18 @@
         "interactivity": {
             "detect_on": "canvas",
             "events": {
-                "onhover": { "enable": true, "mode": "grab" },
+                "onhover": { 
+                    "enable": true, 
+                    "mode": "grab" /* Сетка будет ярко стягиваться к курсору */
+                },
                 "onclick": { "enable": true, "mode": "push" },
                 "resize": true
             },
             "modes": {
-                "grab": { "distance": 180, "line_linked": { "opacity": 0.35 } }
+                "grab": { 
+                    "distance": 200, 
+                    "line_linked": { "opacity": 0.8 } /* При наведении линии становятся максимально яркими */
+                }
             }
         },
         "retina_detect": true
